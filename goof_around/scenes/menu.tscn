@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://rl08vkpmnegi"]
+
+[ext_resource type="Texture2D" uid="uid://bhy22j2kkb2nt" path="res://assets/image/golf5.jpg" id="1_yqeox"]
+
+[node name="menu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0.621524, 0.621524, 0.621524, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_yqeox")
+
+[node name="Button1" type="Button" parent="CanvasLayer"]
+offset_left = 247.0
+offset_top = 238.0
+offset_right = 469.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 30
+text = "Play"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 249.0
+offset_top = 367.0
+offset_right = 471.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 30
+text = "skin"
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+offset_left = 251.0
+offset_top = 498.0
+offset_right = 473.0
+offset_bottom = 582.0
+theme_override_font_sizes/font_size = 30
+text = "setting"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -549.0
+offset_top = -183.0
+offset_right = -216.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Golf"
+horizontal_alignment = 1
+vertical_alignment = 1
