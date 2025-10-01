@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://da41m7b1fl7oc"
+path="res://.godot/imported/tile-spawn.obj-8f4be29f8923e0beec840be1877a11fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tile-spawn.obj-8f4be29f8923e0beec840be1877a11fc.mesh"]
+
+source_file="res://assets/models/kenny/Models/OBJ format/tile-spawn.obj"
+dest_files=["res://.godot/imported/tile-spawn.obj-8f4be29f8923e0beec840be1877a11fc.mesh", "res://.godot/imported/tile-spawn.obj-8f4be29f8923e0beec840be1877a11fc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

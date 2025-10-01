@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b6vsk6qwx2bc5"]
-
-[ext_resource type="Texture2D" uid="uid://bwhadj3iylh0c" path="res://assets/grass1_3.jpeg" id="1_al5co"]
-
-[resource]
-albedo_color = Color(0.596078, 0.701961, 0.929412, 1)
-albedo_texture = ExtResource("1_al5co")
-uv1_triplanar = true
-uv1_world_triplanar = true
