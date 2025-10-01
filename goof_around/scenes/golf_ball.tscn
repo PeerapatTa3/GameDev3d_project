@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://11owygk64ae0"]
+
+[ext_resource type="Script" uid="uid://v68hqe0bq4v2" path="res://scripts/golf_ball_controller.gd" id="1_md8gv"]
+[ext_resource type="Script" uid="uid://bqb1wjtr7t5g" path="res://scripts/Camera.gd" id="2_3p86k"]
+[ext_resource type="Texture2D" uid="uid://bmlhnmqkgdhip" path="res://assets/43402.jpg" id="2_70p3a"]
+[ext_resource type="AudioStream" uid="uid://csmdkhn6nqnf1" path="res://assets/golf-swing-metallic-310481.mp3" id="4_2nwmu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p4kc3"]
+friction = 0.4
+rough = true
+bounce = 0.35
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nwmu"]
+albedo_texture = ExtResource("2_70p3a")
+
+[sub_resource type="SphereMesh" id="SphereMesh_4tc7r"]
+material = SubResource("StandardMaterial3D_2nwmu")
+radius = 0.102
+height = 0.205
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfbwq"]
+radius = 0.102
+
+[sub_resource type="QuadMesh" id="QuadMesh_47i7u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cd2xx"]
+
+[node name="Golf_ball" type="RigidBody3D" groups=["Player"]]
+physics_material_override = SubResource("PhysicsMaterial_p4kc3")
+script = ExtResource("1_md8gv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_4tc7r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_vfbwq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 4.09896, 0)
+script = ExtResource("2_3p86k")
+
+[node name="Scaler" type="Marker3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scaler"]
+transform = Transform3D(1, -4.23516e-22, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.5)
+mesh = SubResource("QuadMesh_47i7u")
+surface_material_override/0 = SubResource("StandardMaterial3D_cd2xx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2nwmu")
+volume_db = -5.0
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
