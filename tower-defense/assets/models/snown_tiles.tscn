@@ -1,0 +1,154 @@
+[gd_scene load_steps=51 format=3 uid="uid://cijnty5ocgh6s"]
+
+[ext_resource type="PackedScene" uid="uid://q8ykjx1on8kv" path="res://assets/models/kenny/Models/GLB format/snow-detail-crystal-large.glb" id="1_3u00h"]
+[ext_resource type="PackedScene" uid="uid://xfl03fyvg3lp" path="res://assets/models/kenny/Models/GLB format/snow-detail-crystal.glb" id="2_5bape"]
+[ext_resource type="PackedScene" uid="uid://csmve2q3hlt4l" path="res://assets/models/kenny/Models/GLB format/snow-detail-dirt-large.glb" id="3_rnss1"]
+[ext_resource type="PackedScene" uid="uid://3etyk35bwo6d" path="res://assets/models/kenny/Models/GLB format/snow-detail-dirt.glb" id="4_6dheb"]
+[ext_resource type="PackedScene" uid="uid://dsvtr2f008s1c" path="res://assets/models/kenny/Models/GLB format/snow-detail-rocks-large.glb" id="5_g2gnr"]
+[ext_resource type="PackedScene" uid="uid://1pffcw6k8j6k" path="res://assets/models/kenny/Models/GLB format/snow-detail-rocks.glb" id="6_t674n"]
+[ext_resource type="PackedScene" uid="uid://dd6lrwlohchm8" path="res://assets/models/kenny/Models/GLB format/snow-detail-tree-large.glb" id="7_yvm70"]
+[ext_resource type="PackedScene" uid="uid://cipc732ushwuv" path="res://assets/models/kenny/Models/GLB format/snow-detail-tree.glb" id="8_wx8q4"]
+[ext_resource type="PackedScene" uid="uid://cmekqd80nsawb" path="res://assets/models/kenny/Models/GLB format/snow-tile-bump.glb" id="9_561g4"]
+[ext_resource type="PackedScene" uid="uid://dlpa2yyof6wme" path="res://assets/models/kenny/Models/GLB format/snow-tile-corner-inner.glb" id="10_f8d8o"]
+[ext_resource type="PackedScene" uid="uid://bwlkc60drngs4" path="res://assets/models/kenny/Models/GLB format/snow-tile-corner-large.glb" id="11_0f4sa"]
+[ext_resource type="PackedScene" uid="uid://hjoq64f4txwm" path="res://assets/models/kenny/Models/GLB format/snow-tile-corner-outer.glb" id="12_wvp1k"]
+[ext_resource type="PackedScene" uid="uid://dhrwglguccquv" path="res://assets/models/kenny/Models/GLB format/snow-tile-corner-round.glb" id="13_cwaxc"]
+[ext_resource type="PackedScene" uid="uid://c6q3yc1e34hmk" path="res://assets/models/kenny/Models/GLB format/snow-tile-corner-square.glb" id="14_6aea0"]
+[ext_resource type="PackedScene" uid="uid://bjyier6mp7k0o" path="res://assets/models/kenny/Models/GLB format/snow-tile-crossing.glb" id="15_iadmg"]
+[ext_resource type="PackedScene" uid="uid://bwm6ipa5d7kvx" path="res://assets/models/kenny/Models/GLB format/snow-tile-crystal.glb" id="16_a8am5"]
+[ext_resource type="PackedScene" uid="uid://cad35b24iqts7" path="res://assets/models/kenny/Models/GLB format/snow-tile-dirt.glb" id="17_6j7ql"]
+[ext_resource type="PackedScene" uid="uid://dvr4giv0jl71t" path="res://assets/models/kenny/Models/GLB format/snow-tile-end-round.glb" id="18_ebe3e"]
+[ext_resource type="PackedScene" uid="uid://c4xigr70e13g2" path="res://assets/models/kenny/Models/GLB format/snow-tile-end.glb" id="19_fr1he"]
+[ext_resource type="PackedScene" uid="uid://b7g5mf1obuir5" path="res://assets/models/kenny/Models/GLB format/snow-tile-hill.glb" id="20_0stjp"]
+[ext_resource type="PackedScene" uid="uid://clg6w8h3arfac" path="res://assets/models/kenny/Models/GLB format/snow-tile-river-bridge.glb" id="21_5sg2g"]
+[ext_resource type="PackedScene" uid="uid://depq8aq32ju4u" path="res://assets/models/kenny/Models/GLB format/snow-tile-river-corner.glb" id="22_s0kri"]
+[ext_resource type="PackedScene" uid="uid://b0wflglk57is2" path="res://assets/models/kenny/Models/GLB format/snow-tile-river-slope-large.glb" id="23_yy1x4"]
+[ext_resource type="PackedScene" uid="uid://dyu26dxtj3l3y" path="res://assets/models/kenny/Models/GLB format/snow-tile-river-slope.glb" id="24_c8n8l"]
+[ext_resource type="PackedScene" uid="uid://bcaklvnyrj723" path="res://assets/models/kenny/Models/GLB format/snow-tile-river-straight.glb" id="25_6qhae"]
+[ext_resource type="PackedScene" uid="uid://jg7g8qejvctt" path="res://assets/models/kenny/Models/GLB format/snow-tile-river-transition.glb" id="26_mh4b7"]
+[ext_resource type="PackedScene" uid="uid://b8uhfr2g7m7ot" path="res://assets/models/kenny/Models/GLB format/snow-tile-river-waterfall.glb" id="27_qbo7l"]
+[ext_resource type="PackedScene" uid="uid://13gaf28v2f88" path="res://assets/models/kenny/Models/GLB format/snow-tile-rock.glb" id="28_ekxpr"]
+[ext_resource type="PackedScene" uid="uid://bkjqd8clmd073" path="res://assets/models/kenny/Models/GLB format/snow-tile-slope.glb" id="29_uuyok"]
+[ext_resource type="PackedScene" uid="uid://dddov5cy8k1vi" path="res://assets/models/kenny/Models/GLB format/snow-tile-spawn-end-round.glb" id="30_0qbg1"]
+[ext_resource type="PackedScene" uid="uid://bh7niorau2uxq" path="res://assets/models/kenny/Models/GLB format/snow-tile-spawn-end.glb" id="31_d3k56"]
+[ext_resource type="PackedScene" uid="uid://bhxocf3eei3w7" path="res://assets/models/kenny/Models/GLB format/snow-tile-spawn-round.glb" id="32_xsj5s"]
+[ext_resource type="PackedScene" uid="uid://bgllehc5gaxs3" path="res://assets/models/kenny/Models/GLB format/snow-tile-spawn.glb" id="33_qnm7j"]
+[ext_resource type="PackedScene" uid="uid://b1mrq3kjtm803" path="res://assets/models/kenny/Models/GLB format/snow-tile-split.glb" id="34_dsydf"]
+[ext_resource type="PackedScene" uid="uid://bndp61405phtl" path="res://assets/models/kenny/Models/GLB format/snow-tile-straight-slope-large.glb" id="35_ohnbu"]
+[ext_resource type="PackedScene" uid="uid://drp3noayo3txj" path="res://assets/models/kenny/Models/GLB format/snow-tile-straight-slope.glb" id="36_uh1te"]
+[ext_resource type="PackedScene" uid="uid://cyof3jgoyd4i6" path="res://assets/models/kenny/Models/GLB format/snow-tile-straight.glb" id="37_mio8m"]
+[ext_resource type="PackedScene" uid="uid://dd8x1n3lafmj2" path="res://assets/models/kenny/Models/GLB format/snow-tile-transition.glb" id="38_gmqm3"]
+[ext_resource type="PackedScene" uid="uid://cxmv4767ghgdo" path="res://assets/models/kenny/Models/GLB format/snow-tile-tree-double.glb" id="39_kehnp"]
+[ext_resource type="PackedScene" uid="uid://ndilg3umopl3" path="res://assets/models/kenny/Models/GLB format/snow-tile-tree-quad.glb" id="40_33w2p"]
+[ext_resource type="PackedScene" uid="uid://pspem8414d2q" path="res://assets/models/kenny/Models/GLB format/snow-tile-tree.glb" id="41_ymfln"]
+[ext_resource type="PackedScene" uid="uid://dnsnrg50gicqu" path="res://assets/models/kenny/Models/GLB format/snow-tile-wide-corner.glb" id="42_1jhwi"]
+[ext_resource type="PackedScene" uid="uid://bxeft72ao6va0" path="res://assets/models/kenny/Models/GLB format/snow-tile-wide-split.glb" id="43_r5d8f"]
+[ext_resource type="PackedScene" uid="uid://086yt7k8kivv" path="res://assets/models/kenny/Models/GLB format/snow-tile-wide-straight.glb" id="44_5fpkt"]
+[ext_resource type="PackedScene" uid="uid://un2wqvob5dvp" path="res://assets/models/kenny/Models/GLB format/snow-tile-wide-transition.glb" id="45_til3x"]
+[ext_resource type="PackedScene" uid="uid://tha3ropg406c" path="res://assets/models/kenny/Models/GLB format/snow-tile.glb" id="46_awitc"]
+[ext_resource type="PackedScene" uid="uid://c23vbst5awseb" path="res://assets/models/kenny/Models/GLB format/snow-wood-structure-high-part.glb" id="47_yeova"]
+[ext_resource type="PackedScene" uid="uid://de5fnxmxwpo0d" path="res://assets/models/kenny/Models/GLB format/snow-wood-structure-high.glb" id="48_cptal"]
+[ext_resource type="PackedScene" uid="uid://cjxhiuumqp1rx" path="res://assets/models/kenny/Models/GLB format/snow-wood-structure-part.glb" id="49_23s0y"]
+[ext_resource type="PackedScene" uid="uid://cturxq0d3ucu1" path="res://assets/models/kenny/Models/GLB format/snow-wood-structure.glb" id="50_ifbk0"]
+
+[node name="SnownTiles" type="Node3D"]
+
+[node name="snow-detail-crystal-large2" parent="." instance=ExtResource("1_3u00h")]
+
+[node name="snow-detail-crystal2" parent="." instance=ExtResource("2_5bape")]
+
+[node name="snow-detail-dirt-large2" parent="." instance=ExtResource("3_rnss1")]
+
+[node name="snow-detail-dirt2" parent="." instance=ExtResource("4_6dheb")]
+
+[node name="snow-detail-rocks-large2" parent="." instance=ExtResource("5_g2gnr")]
+
+[node name="snow-detail-rocks2" parent="." instance=ExtResource("6_t674n")]
+
+[node name="snow-detail-tree-large2" parent="." instance=ExtResource("7_yvm70")]
+
+[node name="snow-detail-tree2" parent="." instance=ExtResource("8_wx8q4")]
+
+[node name="snow-tile-bump2" parent="." instance=ExtResource("9_561g4")]
+
+[node name="snow-tile-corner-inner2" parent="." instance=ExtResource("10_f8d8o")]
+
+[node name="snow-tile-corner-large2" parent="." instance=ExtResource("11_0f4sa")]
+
+[node name="snow-tile-corner-outer2" parent="." instance=ExtResource("12_wvp1k")]
+
+[node name="snow-tile-corner-round2" parent="." instance=ExtResource("13_cwaxc")]
+
+[node name="snow-tile-corner-square2" parent="." instance=ExtResource("14_6aea0")]
+
+[node name="snow-tile-crossing2" parent="." instance=ExtResource("15_iadmg")]
+
+[node name="snow-tile-crystal2" parent="." instance=ExtResource("16_a8am5")]
+
+[node name="snow-tile-dirt2" parent="." instance=ExtResource("17_6j7ql")]
+
+[node name="snow-tile-end-round2" parent="." instance=ExtResource("18_ebe3e")]
+
+[node name="snow-tile-end2" parent="." instance=ExtResource("19_fr1he")]
+
+[node name="snow-tile-hill2" parent="." instance=ExtResource("20_0stjp")]
+
+[node name="snow-tile-river-bridge2" parent="." instance=ExtResource("21_5sg2g")]
+
+[node name="snow-tile-river-corner2" parent="." instance=ExtResource("22_s0kri")]
+
+[node name="snow-tile-river-slope-large2" parent="." instance=ExtResource("23_yy1x4")]
+
+[node name="snow-tile-river-slope2" parent="." instance=ExtResource("24_c8n8l")]
+
+[node name="snow-tile-river-straight2" parent="." instance=ExtResource("25_6qhae")]
+
+[node name="snow-tile-river-transition2" parent="." instance=ExtResource("26_mh4b7")]
+
+[node name="snow-tile-river-waterfall2" parent="." instance=ExtResource("27_qbo7l")]
+
+[node name="snow-tile-rock2" parent="." instance=ExtResource("28_ekxpr")]
+
+[node name="snow-tile-slope2" parent="." instance=ExtResource("29_uuyok")]
+
+[node name="snow-tile-spawn-end-round2" parent="." instance=ExtResource("30_0qbg1")]
+
+[node name="snow-tile-spawn-end2" parent="." instance=ExtResource("31_d3k56")]
+
+[node name="snow-tile-spawn-round2" parent="." instance=ExtResource("32_xsj5s")]
+
+[node name="snow-tile-spawn2" parent="." instance=ExtResource("33_qnm7j")]
+
+[node name="snow-tile-split2" parent="." instance=ExtResource("34_dsydf")]
+
+[node name="snow-tile-straight-slope-large2" parent="." instance=ExtResource("35_ohnbu")]
+
+[node name="snow-tile-straight-slope2" parent="." instance=ExtResource("36_uh1te")]
+
+[node name="snow-tile-straight2" parent="." instance=ExtResource("37_mio8m")]
+
+[node name="snow-tile-transition2" parent="." instance=ExtResource("38_gmqm3")]
+
+[node name="snow-tile-tree-double2" parent="." instance=ExtResource("39_kehnp")]
+
+[node name="snow-tile-tree-quad2" parent="." instance=ExtResource("40_33w2p")]
+
+[node name="snow-tile-tree2" parent="." instance=ExtResource("41_ymfln")]
+
+[node name="snow-tile-wide-corner2" parent="." instance=ExtResource("42_1jhwi")]
+
+[node name="snow-tile-wide-split2" parent="." instance=ExtResource("43_r5d8f")]
+
+[node name="snow-tile-wide-straight2" parent="." instance=ExtResource("44_5fpkt")]
+
+[node name="snow-tile-wide-transition2" parent="." instance=ExtResource("45_til3x")]
+
+[node name="snow-tile2" parent="." instance=ExtResource("46_awitc")]
+
+[node name="snow-wood-structure-high-part2" parent="." instance=ExtResource("47_yeova")]
+
+[node name="snow-wood-structure-high2" parent="." instance=ExtResource("48_cptal")]
+
+[node name="snow-wood-structure-part2" parent="." instance=ExtResource("49_23s0y")]
+
+[node name="snow-wood-structure2" parent="." instance=ExtResource("50_ifbk0")]
