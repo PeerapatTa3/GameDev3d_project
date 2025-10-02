@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bss0f6qvwlqht"]
+
+[ext_resource type="Script" uid="uid://bu87lqk0jq3y2" path="res://camera.gd" id="1_cvpoc"]
+
+[node name="Camera" type="Node3D"]
+script = ExtResource("1_cvpoc")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["main_camera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+visible = false
+target_position = Vector3(0, -5, 0)
+collide_with_areas = true
+debug_shape_custom_color = Color(1, 0, 0, 1)

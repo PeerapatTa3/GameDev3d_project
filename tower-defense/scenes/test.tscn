@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpdp0kck41psl"]
+[gd_scene load_steps=4 format=3 uid="uid://cpdp0kck41psl"]
 
-[ext_resource type="PackedScene" uid="uid://vfvscw1hot77" path="res://scenes/testground.tscn" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://bss0f6qvwlqht" path="res://scenes/camera.tscn" id="2_bl13t"]
+[ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://scenes/snown_map.tscn" id="3_74lek"]
+[ext_resource type="Script" uid="uid://dw3wlm48fpjk7" path="res://scenes/placementmanager.gd" id="3_iyx0m"]
 
 [node name="Test" type="Node"]
 
-[node name="Testground" parent="." instance=ExtResource("1_errlg")]
-metadata/_edit_lock_ = true
+[node name="Placementmanager" type="Node3D" parent="." node_paths=PackedStringArray("grid_map")]
+script = ExtResource("3_iyx0m")
+grid_map = NodePath("../snown_map")
+
+[node name="Camera" parent="." instance=ExtResource("2_bl13t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 7, 0)
+shadow_enabled = true
+
+[node name="snown_map" parent="." instance=ExtResource("3_74lek")]
