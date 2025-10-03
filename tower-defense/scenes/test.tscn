@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpdp0kck41psl"]
+[gd_scene load_steps=6 format=3 uid="uid://cpdp0kck41psl"]
 
+[ext_resource type="Script" uid="uid://4yhtakmo86tf" path="res://scenes/test.gd" id="1_j5jx5"]
 [ext_resource type="PackedScene" uid="uid://bss0f6qvwlqht" path="res://scenes/camera.tscn" id="2_bl13t"]
 [ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://scenes/snown_map.tscn" id="3_74lek"]
 [ext_resource type="Script" uid="uid://dw3wlm48fpjk7" path="res://scenes/placementmanager.gd" id="3_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://dlnnp8xhhsnxm" path="res://scenes/ui.tscn" id="4_74lek"]
 
 [node name="Test" type="Node"]
+script = ExtResource("1_j5jx5")
 
 [node name="Placementmanager" type="Node3D" parent="." node_paths=PackedStringArray("grid_map")]
 script = ExtResource("3_iyx0m")
@@ -18,3 +21,5 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 7, 0)
 shadow_enabled = true
 
 [node name="snown_map" parent="." instance=ExtResource("3_74lek")]
+
+[node name="UI" parent="." instance=ExtResource("4_74lek")]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlnnp8xhhsnxm"]
+
+[ext_resource type="Texture2D" uid="uid://ikq1qwpoye" path="res://assets/Images/Untitled.jpg" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://dtbmahwf3h80i" path="res://scenes/ui.gd" id="1_x4jx1"]
+
+[node name="UI" type="Node"]
+script = ExtResource("1_x4jx1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Buttons" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.8
+anchor_top = 13.85
+anchor_right = 11.375
+anchor_bottom = 15.375
+texture_normal = ExtResource("1_nt7q6")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 11.725
+anchor_top = 13.875
+anchor_right = 13.3
+anchor_bottom = 15.4
+texture_normal = ExtResource("1_nt7q6")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
