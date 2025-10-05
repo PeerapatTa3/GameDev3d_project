@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpdp0kck41psl"]
+[gd_scene load_steps=8 format=3 uid="uid://cpdp0kck41psl"]
 
-[ext_resource type="Script" uid="uid://4yhtakmo86tf" path="res://scenes/test.gd" id="1_j5jx5"]
+[ext_resource type="Script" uid="uid://dk5qakt24es0e" path="res://Scrips/test.gd" id="1_j5jx5"]
 [ext_resource type="PackedScene" uid="uid://bss0f6qvwlqht" path="res://scenes/camera.tscn" id="2_bl13t"]
 [ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://scenes/snown_map.tscn" id="3_74lek"]
 [ext_resource type="Script" uid="uid://dw3wlm48fpjk7" path="res://scenes/placementmanager.gd" id="3_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://dlnnp8xhhsnxm" path="res://scenes/ui.tscn" id="4_74lek"]
+[ext_resource type="PackedScene" uid="uid://b32wixyp3xbr" path="res://scenes/cannon.tscn" id="6_lpvoh"]
 
-[node name="Test" type="Node"]
+[sub_resource type="Curve3D" id="Curve3D_lpvoh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -10.498, 0.3, -0.49, 0, 0, 0, 0, 0, 0, -6.673, 0.3, -0.349, 0, 0, 0, 0, 0, 0, -6.409, 0.3, 1.476, 0, 0, 0, 0, 0, 0, -3.549, 0.3, 1.476, 0, 0, 0, 0, 0, 0, -3.391, 0.3, -3.315, 0, 0, 0, 0, 0, 0, 0.294, 0.3, -3.368, 0, 0, 0, 0, 0, 0, 0.575, 0.3, 2.476, 0, 0, 0, 0, 0, 0, 5.401, 0.3, 2.458, 0, 0, 0, 0, 0, 0, 5.577, 0.3, -1.332, 0, 0, 0, 0, 0, 0, 10.456, 0.3, -1.515),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[node name="Test" type="Node3D"]
 script = ExtResource("1_j5jx5")
 
 [node name="Placementmanager" type="Node3D" parent="." node_paths=PackedStringArray("grid_map")]
@@ -23,3 +31,13 @@ shadow_enabled = true
 [node name="snown_map" parent="." instance=ExtResource("3_74lek")]
 
 [node name="UI" parent="." instance=ExtResource("4_74lek")]
+
+[node name="Path" type="Path3D" parent="."]
+curve = SubResource("Curve3D_lpvoh")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="Cannon" parent="." instance=ExtResource("6_lpvoh")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.29142, 0.2, -1.4383)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

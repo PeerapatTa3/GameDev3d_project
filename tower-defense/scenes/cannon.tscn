@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b32wixyp3xbr"]
+
+[ext_resource type="Script" uid="uid://b4h3xnic1g8s1" path="res://Scrips/cannon.gd" id="1_pxhkx"]
+[ext_resource type="ArrayMesh" uid="uid://dfs8mkf7q4fuw" path="res://assets/models/kenny/Models/OBJ format/weapon-cannon.obj" id="1_xuqfy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y22rs"]
+size = Vector3(1, 0.155334, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pxhkx"]
+radius = 3.5
+
+[node name="Cannon" type="StaticBody3D"]
+script = ExtResource("1_pxhkx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_xuqfy")
+
+[node name="aim" type="Marker3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376871, 0.356979)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0708923, 0)
+shape = SubResource("BoxShape3D_y22rs")
+
+[node name="MobDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+shape = SubResource("SphereShape3D_pxhkx")
+
+[node name="bulletContainner" type="Node" parent="."]
+
+[node name="ShootingCoolDown" type="Timer" parent="."]
+
+[connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
+[connection signal="body_exited" from="MobDetector" to="." method="_on_mob_detector_body_exited"]
+[connection signal="timeout" from="ShootingCoolDown" to="." method="_on_shooting_cool_down_timeout"]
