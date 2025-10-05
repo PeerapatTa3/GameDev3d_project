@@ -45,7 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://bxeft72ao6va0" path="res://assets/models/kenny/Models/GLB format/snow-tile-wide-split.glb" id="43_r5d8f"]
 [ext_resource type="PackedScene" uid="uid://086yt7k8kivv" path="res://assets/models/kenny/Models/GLB format/snow-tile-wide-straight.glb" id="44_5fpkt"]
 [ext_resource type="PackedScene" uid="uid://un2wqvob5dvp" path="res://assets/models/kenny/Models/GLB format/snow-tile-wide-transition.glb" id="45_til3x"]
-[ext_resource type="Texture2D" uid="uid://dkl6b1hmilyrc" path="res://assets/models/kenny/Models/GLB format/Textures/colormap.png" id="46_3u00h"]
+[ext_resource type="Texture2D" uid="uid://bn1f3cuolddct" path="res://assets/models/kenny/Models/GLB format/Textures/colormap.png" id="46_3u00h"]
 [ext_resource type="PackedScene" uid="uid://c23vbst5awseb" path="res://assets/models/kenny/Models/GLB format/snow-wood-structure-high-part.glb" id="47_yeova"]
 [ext_resource type="PackedScene" uid="uid://de5fnxmxwpo0d" path="res://assets/models/kenny/Models/GLB format/snow-wood-structure-high.glb" id="48_cptal"]
 [ext_resource type="PackedScene" uid="uid://cjxhiuumqp1rx" path="res://assets/models/kenny/Models/GLB format/snow-wood-structure-part.glb" id="49_23s0y"]

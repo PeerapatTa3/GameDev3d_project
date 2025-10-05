@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpdp0kck41psl"]
+[gd_scene load_steps=7 format=3 uid="uid://cpdp0kck41psl"]
 
 [ext_resource type="Script" uid="uid://dk5qakt24es0e" path="res://Scrips/test.gd" id="1_j5jx5"]
 [ext_resource type="PackedScene" uid="uid://bss0f6qvwlqht" path="res://scenes/camera.tscn" id="2_bl13t"]
 [ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://scenes/snown_map.tscn" id="3_74lek"]
 [ext_resource type="Script" uid="uid://dw3wlm48fpjk7" path="res://scenes/placementmanager.gd" id="3_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://dlnnp8xhhsnxm" path="res://scenes/ui.tscn" id="4_74lek"]
-[ext_resource type="PackedScene" uid="uid://b32wixyp3xbr" path="res://scenes/cannon.tscn" id="6_lpvoh"]
 
 [sub_resource type="Curve3D" id="Curve3D_lpvoh"]
 _data = {
@@ -36,8 +35,5 @@ shadow_enabled = true
 curve = SubResource("Curve3D_lpvoh")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-
-[node name="Cannon" parent="." instance=ExtResource("6_lpvoh")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.29142, 0.2, -1.4383)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
