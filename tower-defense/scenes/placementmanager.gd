@@ -1,7 +1,9 @@
 extends Node3D
+class_name MouseHandler
 
 @export var grid_map: GridMap
 @export var tile_thickness: float = 0.25  # thickness of a tile (adjust if needed)
+@export var upgrade_ui: Upgrade_UI
 
 # runtime
 var camera: Camera3D
@@ -13,7 +15,6 @@ var selected_tower_cost: int = 0
 var occupied_cells := {}
 
 # player economy
-var player_money: int = 200
 
 func _ready() -> void:
 	# auto-find camera (must be added to group "main_camera")
@@ -50,7 +51,8 @@ func _process(_delta: float) -> void:
 		if ghost_instance:
 			ghost_instance.position = cell_pos
 			ghost_instance.visible = true
-			var can_place = _can_place_at(cell) and player_money >= selected_tower_cost
+			var can_place = _can_place_at(cell) and GameStatus.coin >= selected_tower_cost
+			GameStatus.coin >= selected_tower_cost
 			_set_ghost_color(can_place)
 	else:
 		if ghost_instance:
@@ -59,12 +61,16 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# right click cancels placement
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		_cancel_placement()
+		if selected_tower_scene:
+			_cancel_placement()
 
 	# left click places if a tile is highlighted
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if selected_tower_scene and ghost_instance and ghost_instance.visible:
 			_place_object_on_grid()
+	
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		_check_tower_click()
 
 func _place_object_on_grid() -> void:
 	if camera == null or grid_map == null:
@@ -87,18 +93,18 @@ func _place_object_on_grid() -> void:
 	if not _can_place_at(cell):
 		print("❌ Cell occupied!")
 		return
-
-	if player_money < selected_tower_cost:
+	if GameStatus.coin < selected_tower_cost:
 		print("💸 Not enough money! Need:", selected_tower_cost)
 		return
 
-	# spend money
-	player_money -= selected_tower_cost
-	print("✅ Placed! Remaining money:", player_money)
+	# spend coin
+	GameStatus.coin -= selected_tower_cost
+	print("✅ Placed! Remaining money ", GameStatus.coin)
 
 	# spawn the actual tower (placed under the current scene root)
-	var tower: Node3D = selected_tower_scene.instantiate() as Node3D
+	var tower: Tower = selected_tower_scene.instantiate() as Tower
 	tower.position = cell_pos
+	tower.placed_cell = cell
 	get_tree().current_scene.add_child(tower)
 
 	# mark occupied
@@ -176,3 +182,20 @@ func _update_ghost_material_color(node: Node, color: Color) -> void:
 				mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 				child.material_override = mat
 		_update_ghost_material_color(child, color)
+
+func _check_tower_click() -> void:
+	var camera := get_tree().get_first_node_in_group("main_camera")
+	if camera == null || selected_tower_scene != null:
+		return
+
+	var mouse_pos = get_viewport().get_mouse_position()
+	var from = camera.project_ray_origin(mouse_pos)
+	var to = from + camera.project_ray_normal(mouse_pos) * 1000.0
+
+	var space_state = get_world_3d().direct_space_state
+	var result = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from, to))
+
+	if result.has("collider"):
+		var clicked = result.collider
+		if clicked.is_in_group("Tower") and upgrade_ui:
+			upgrade_ui._upgrade_open(clicked)

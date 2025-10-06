@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkf87uvabisam"]
+
+[ext_resource type="Script" uid="uid://dw3wlm48fpjk7" path="res://scenes/placementmanager.gd" id="1_1mrws"]
+
+[node name="MouseHandler" type="Node3D" groups=["MouseHandler"]]
+script = ExtResource("1_1mrws")

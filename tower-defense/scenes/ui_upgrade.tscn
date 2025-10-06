@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs8mkuc1k3kny"]
+[gd_scene load_steps=6 format=3 uid="uid://ddmkfnmhl3283"]
 
+[ext_resource type="Script" uid="uid://cqqnjjpli6mj1" path="res://Scrips/ui_upgrade.gd" id="1_4crww"]
 [ext_resource type="Texture2D" uid="uid://m4ghurox2tj4" path="res://assets/Images/canon.png" id="1_xqsa5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ha0k0"]
@@ -35,6 +36,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="UI_Upgrade" type="Node"]
+script = ExtResource("1_4crww")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -53,7 +55,7 @@ offset_bottom = 223.0
 texture = ExtResource("1_xqsa5")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Panel"]
+[node name="Upgrade" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_left = 130.0
 offset_top = 487.0
@@ -71,7 +73,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_mt1bt")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l5htj")
 text = "Upgrade"
 
-[node name="Button2" type="Button" parent="CanvasLayer/Panel"]
+[node name="Sell" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_left = 130.0
 offset_top = 550.0
@@ -103,6 +105,15 @@ text = "Canon"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Close" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 49.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "X"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 852.0
 offset_top = 292.0
@@ -110,83 +121,87 @@ offset_right = 1030.0
 offset_bottom = 419.0
 theme_override_constants/separation = 18
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="Level" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 
-[node name="damage" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="Level" type="Label" parent="CanvasLayer/VBoxContainer/Level"]
 layout_mode = 2
-text = "Damage :"
+text = "Level : "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Old_damage" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "15"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="arrow" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "->"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="New_damage" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "20"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Range" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Range : "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Old_Range" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "30"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="arrow2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "->"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="New_Range" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Speed" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "Speed : "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Old_Speed" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+[node name="Old_Level" type="Label" parent="CanvasLayer/VBoxContainer/Level"]
 layout_mode = 2
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="arrow3" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+[node name="arrow3" type="Label" parent="CanvasLayer/VBoxContainer/Level"]
 layout_mode = 2
 text = "->"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="New_Speed" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+[node name="New_Level" type="Label" parent="CanvasLayer/VBoxContainer/Level"]
 layout_mode = 2
 text = "1.1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Damage" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="damage" type="Label" parent="CanvasLayer/VBoxContainer/Damage"]
+layout_mode = 2
+text = "Damage :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Old_damage" type="Label" parent="CanvasLayer/VBoxContainer/Damage"]
+layout_mode = 2
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrow" type="Label" parent="CanvasLayer/VBoxContainer/Damage"]
+layout_mode = 2
+text = "->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="New_damage" type="Label" parent="CanvasLayer/VBoxContainer/Damage"]
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Range" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Range" type="Label" parent="CanvasLayer/VBoxContainer/Range"]
+layout_mode = 2
+text = "Range : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Old_Range" type="Label" parent="CanvasLayer/VBoxContainer/Range"]
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrow2" type="Label" parent="CanvasLayer/VBoxContainer/Range"]
+layout_mode = 2
+text = "->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="New_Range" type="Label" parent="CanvasLayer/VBoxContainer/Range"]
+layout_mode = 2
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Panel/Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Sell" to="." method="_on_sell_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Close" to="." method="_on_close_pressed"]

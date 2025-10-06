@@ -4,11 +4,10 @@ extends Node3D
 
 var enemy_to_spawn : int = 10
 var can_spawn : bool = true
+@export var placement_ui : Node
+@export var placement_manager : Node3D
 
 func _ready() -> void:
-	var placement_ui = $UI
-	var placement_manager = $Placementmanager
-
 	# Make sure UI has the signal defined
 	placement_ui.tower_selected.connect(placement_manager.select_tower)
 
@@ -25,8 +24,6 @@ func game_maneger() -> void:
 		enemy_to_spawn -= 1
 		
 		can_spawn = false
-
-
 
 func _on_spawn_timer_timeout() -> void:
 	can_spawn = true

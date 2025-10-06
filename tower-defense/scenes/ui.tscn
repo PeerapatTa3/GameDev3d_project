@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlnnp8xhhsnxm"]
 
 [ext_resource type="Texture2D" uid="uid://ikq1qwpoye" path="res://assets/Images/Untitled.jpg" id="1_nt7q6"]
-[ext_resource type="Script" uid="uid://dtbmahwf3h80i" path="res://scenes/ui.gd" id="1_x4jx1"]
+[ext_resource type="Script" uid="uid://dtbmahwf3h80i" path="res://Scrips/ui.gd" id="1_x4jx1"]
 [ext_resource type="Texture2D" uid="uid://dthtycn7uv7gm" path="res://assets/Images/889717.png" id="3_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://xrv1q015s8r7" path="res://assets/Images/coin0 (1).png" id="4_wm3ai"]
 
@@ -118,6 +118,7 @@ text = "100"
 vertical_alignment = 1
 
 [node name="coin_img" type="TextureRect" parent="CanvasLayer"]
+visible = false
 offset_left = 401.0
 offset_top = 496.0
 offset_right = 441.0
@@ -125,4 +126,14 @@ offset_bottom = 536.0
 texture = ExtResource("4_wm3ai")
 expand_mode = 1
 
+[node name="Coin" type="TextureButton" parent="CanvasLayer"]
+offset_left = 404.0
+offset_top = 502.0
+offset_right = 438.0
+offset_bottom = 536.0
+texture_normal = ExtResource("4_wm3ai")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Coin" to="." method="_on_coin_pressed"]
