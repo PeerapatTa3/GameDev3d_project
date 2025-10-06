@@ -4,11 +4,10 @@ extends Node3D
 
 var enemy_to_spawn : int = 10
 var can_spawn : bool = true
+@export var placement_ui : Node
+@export var placement_manager : Node3D
 
 func _ready() -> void:
-	var placement_ui = $UI
-	var placement_manager = $MouseHandler
-
 	# Make sure UI has the signal defined
 	placement_ui.tower_selected.connect(placement_manager.select_tower)
 

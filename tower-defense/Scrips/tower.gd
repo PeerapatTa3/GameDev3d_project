@@ -1,20 +1,35 @@
 extends StaticBody3D
+class_name Tower
 
+@export var tower_name : String
 @export var bullet: PackedScene = preload("res://scenes/bullet.tscn")
 @export var bullet_damage: int = 5
 @export var upgrade_cost: int = 50
 @export var upgrade_damage_bonus: int = 5
 @export var upgrade_level: int = 1
 @export var max_upgrade_level: int = 3
+@export var attack_range: Area3D
+@export var upgrade_range_bonus : float = 0.2
 
-var player_money := 200  # replace with global later
-
+var placed_cell : Vector3i
 var current_targets: Array = []
 var curr: CharacterBody3D
 var can_shoot: bool = true
+var attack_shape : SphereShape3D
 
 func _ready() -> void:
 	add_to_group("Tower")
+
+	if attack_range and attack_range.has_node("CollisionShape3D"):
+		var collision = attack_range.get_node("CollisionShape3D") as CollisionShape3D
+		if collision.shape is SphereShape3D:
+			# ✅ duplicate the shape to make it unique per tower
+			attack_shape = collision.shape.duplicate() as SphereShape3D
+			collision.shape = attack_shape
+		else:
+			push_warning("⚠️ Attack range shape is not a SphereShape3D!")
+	else:
+		push_warning("⚠️ No CollisionShape3D found in attack_range Area3D")
 
 func _process(_delta):
 	if is_instance_valid(curr):
@@ -68,18 +83,20 @@ func _input_event(camera, event, position, normal, shape_idx):
 		_on_tower_clicked()
 
 func _on_tower_clicked():
-	print("Tower clicked")
+	print("Upgrade Tower")
 	
 	if upgrade_level >= max_upgrade_level:
 		print("Tower is already max level!")
 		return
 	
-	if GameStats.coin < upgrade_cost:
-		GameStats.coin -= upgrade_cost
+	if GameStatus.coin < upgrade_cost:
+		print("Not enough coin")
+		return
 	
-	player_money -= upgrade_cost
+	GameStatus.coin -= upgrade_cost
 	upgrade_level += 1
 	bullet_damage += upgrade_damage_bonus
+	attack_shape.radius += upgrade_range_bonus
 	print("🔼 Tower upgraded to level %d! New damage: %d" % [upgrade_level, bullet_damage])
 
 	# Visual feedback

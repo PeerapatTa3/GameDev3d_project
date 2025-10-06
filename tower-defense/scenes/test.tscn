@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpdp0kck41psl"]
+[gd_scene load_steps=8 format=3 uid="uid://cpdp0kck41psl"]
 
 [ext_resource type="Script" uid="uid://dk5qakt24es0e" path="res://Scrips/test.gd" id="1_j5jx5"]
 [ext_resource type="PackedScene" uid="uid://bss0f6qvwlqht" path="res://scenes/camera.tscn" id="2_bl13t"]
+[ext_resource type="PackedScene" uid="uid://dkf87uvabisam" path="res://scenes/mouse_handler.tscn" id="2_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://scenes/snown_map.tscn" id="3_74lek"]
-[ext_resource type="Script" uid="uid://dw3wlm48fpjk7" path="res://scenes/placementmanager.gd" id="3_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://dlnnp8xhhsnxm" path="res://scenes/ui.tscn" id="4_74lek"]
+[ext_resource type="PackedScene" uid="uid://ddmkfnmhl3283" path="res://scenes/ui_upgrade.tscn" id="6_lpvoh"]
 
 [sub_resource type="Curve3D" id="Curve3D_lpvoh"]
 _data = {
@@ -13,12 +14,14 @@ _data = {
 }
 point_count = 10
 
-[node name="Test" type="Node3D"]
+[node name="Test" type="Node3D" node_paths=PackedStringArray("placement_ui", "placement_manager")]
 script = ExtResource("1_j5jx5")
+placement_ui = NodePath("UI")
+placement_manager = NodePath("MouseHandler")
 
-[node name="MouseHandler" type="Node3D" parent="." node_paths=PackedStringArray("grid_map")]
-script = ExtResource("3_iyx0m")
+[node name="MouseHandler" parent="." node_paths=PackedStringArray("grid_map", "upgrade_ui") instance=ExtResource("2_lpvoh")]
 grid_map = NodePath("../snown_map")
+upgrade_ui = NodePath("../UI_Upgrade")
 
 [node name="Camera" parent="." instance=ExtResource("2_bl13t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -35,5 +38,7 @@ shadow_enabled = true
 curve = SubResource("Curve3D_lpvoh")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="UI_Upgrade" parent="." instance=ExtResource("6_lpvoh")]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
