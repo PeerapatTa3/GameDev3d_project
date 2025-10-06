@@ -1,4 +1,6 @@
-[gd_scene load_steps=0 format=3 uid="uid://cbxmhmfgrmp4k"]
+[gd_scene load_steps=2 format=3 uid="uid://cbxmhmfgrmp4k"]
+
+[ext_resource type="Texture2D" uid="uid://bn2yl8obiktaf" path="res://assets/Images/menu3.jpg" id="1_l6cm7"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -8,10 +10,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_l6cm7")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 288.0
+offset_right = 899.0
+offset_bottom = 363.0
+scale = Vector2(1.38216, 1.36842)
+theme_override_font_sizes/font_size = 33
+text = "Play"
+
+[node name="setting" type="Button" parent="."]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 409.0
+offset_right = 897.0
+offset_bottom = 484.0
+scale = Vector2(1.38216, 1.36842)
+theme_override_font_sizes/font_size = 33
+text = "setting"
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 1036.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 100
+text = "Sox Kee mah SS2"
+horizontal_alignment = 1
+vertical_alignment = 1
