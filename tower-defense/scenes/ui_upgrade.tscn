@@ -1,0 +1,192 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs8mkuc1k3kny"]
+
+[ext_resource type="Texture2D" uid="uid://m4ghurox2tj4" path="res://assets/Images/canon.png" id="1_xqsa5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ha0k0"]
+bg_color = Color(0.00571485, 0.0657002, 0.217825, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.938373, 0.592468, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt1bt"]
+bg_color = Color(0.6, 0.87451, 0, 0.741176)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.941218, 0.787836, 0.153553, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5htj"]
+bg_color = Color(0.6, 0.87451, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.941218, 0.787836, 0.153553, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="UI_Upgrade" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 719.0
+offset_right = 1151.0
+offset_bottom = 644.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ha0k0")
+
+[node name="towerImg" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 63.0
+offset_right = 323.0
+offset_bottom = 223.0
+texture = ExtResource("1_xqsa5")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 487.0
+offset_right = 290.0
+offset_bottom = 530.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.921569, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l5htj")
+text = "Upgrade"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 550.0
+offset_right = 290.0
+offset_bottom = 593.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.921569, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l5htj")
+text = "Sell"
+
+[node name="NameTower" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 15.0
+offset_right = 79.0
+offset_bottom = 49.0
+grow_horizontal = 2
+text = "Canon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 852.0
+offset_top = 292.0
+offset_right = 1030.0
+offset_bottom = 419.0
+theme_override_constants/separation = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="damage" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Damage :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Old_damage" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrow" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="New_damage" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Range" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Range : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Old_Range" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrow2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="New_Range" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Speed" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Speed : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Old_Speed" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrow3" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="New_Speed" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "1.1"
+horizontal_alignment = 1
+vertical_alignment = 1
