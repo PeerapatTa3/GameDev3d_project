@@ -17,6 +17,7 @@ func _on_texture_button_pressed() -> void:
 
 func _process(delta: float) -> void:
 	coin.text = str(GameStatus.coin)
+	$CanvasLayer/Kill.text = "Kill : " + str(GameStatus.kill)
 
 func _on_coin_pressed() -> void:
 	GameStatus.coin += 100

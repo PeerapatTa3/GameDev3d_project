@@ -40,7 +40,6 @@ func _input_tower_stat():
 		$CanvasLayer/VBoxContainer/Range/New_Range.show()
 	
 
-
 func _close_upgrade_menu()->void:
 	$CanvasLayer.hide()
 	upgrade_traget = null
