@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlnnp8xhhsnxm"]
+[gd_scene load_steps=5 format=3 uid="uid://dlnnp8xhhsnxm"]
 
 [ext_resource type="Texture2D" uid="uid://ikq1qwpoye" path="res://assets/Images/Untitled.jpg" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://dtbmahwf3h80i" path="res://scenes/ui.gd" id="1_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://dthtycn7uv7gm" path="res://assets/Images/889717.png" id="3_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://xrv1q015s8r7" path="res://assets/Images/coin0 (1).png" id="4_wm3ai"]
 
 [node name="UI" type="Node"]
 script = ExtResource("1_x4jx1")
@@ -37,5 +39,90 @@ texture_normal = ExtResource("1_nt7q6")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="Buttons2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Buttons2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 27.025
+anchor_top = 0.125
+anchor_right = 28.6
+anchor_bottom = 1.65
+texture_normal = ExtResource("3_gdt2y")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="wave" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_right = 44.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "wave 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemy" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 46.0
+offset_right = 45.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Enemy : 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kill" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -565.0
+offset_top = 3.0
+offset_right = -426.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Kill : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="coin" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 498.0
+offset_right = -44.0
+offset_bottom = 540.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.992157, 0.8, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "100"
+vertical_alignment = 1
+
+[node name="coin_img" type="TextureRect" parent="CanvasLayer"]
+offset_left = 401.0
+offset_top = 496.0
+offset_right = 441.0
+offset_bottom = 536.0
+texture = ExtResource("4_wm3ai")
+expand_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
