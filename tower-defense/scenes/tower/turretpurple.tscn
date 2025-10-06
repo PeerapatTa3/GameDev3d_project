@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhosm0o71tgoh"]
+
+[ext_resource type="ArrayMesh" uid="uid://c3smmkyl66pcm" path="res://assets/models/kenny/Models/OBJ format/tower-square-build-c.obj" id="1_7nyc4"]
+[ext_resource type="ArrayMesh" uid="uid://d0d5gxj2v1q71" path="res://assets/models/kenny/Models/OBJ format/tower-square-middle-b.obj" id="2_emesw"]
+[ext_resource type="ArrayMesh" uid="uid://bpwsma6cc4m3e" path="res://assets/models/kenny/Models/OBJ format/tower-round-middle-b.obj" id="3_fgwst"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nx7hh"]
+size = Vector3(0.938187, 2.17408, 0.99942)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_37sl1"]
+radius = 9.9571
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_7nyc4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.900815, 0)
+mesh = ExtResource("2_emesw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39118, 0)
+mesh = ExtResource("3_fgwst")
+
+[node name="aim" type="Marker3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376871, 0.356979)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0232619, 1.08264, 0.00221255)
+shape = SubResource("BoxShape3D_nx7hh")
+
+[node name="MobDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+shape = SubResource("SphereShape3D_37sl1")
+
+[node name="bulletContainner" type="Node" parent="."]
+
+[node name="ShootingCoolDown" type="Timer" parent="."]

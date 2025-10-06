@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=4 uid="uid://bgjxavrqx7a0w"]
 
-[ext_resource type="Texture2D" uid="uid://bn1f3cuolddct" path="res://assets/models/kenny/Models/GLB format/Textures/colormap.png" id="1_6w6ls"]
+[ext_resource type="Texture2D" uid="uid://bn1f3cuolddct" path="res://assets/models/kenny/Models/GLB format/Textures/colormap.png" id="1_2fpu7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtpo8"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("1_6w6ls")
+albedo_texture = ExtResource("1_2fpu7")
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_v40f4"]
@@ -43,7 +43,7 @@ shadow_mesh = SubResource("ArrayMesh_v40f4")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkdse"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("1_6w6ls")
+albedo_texture = ExtResource("1_2fpu7")
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t3bax"]

@@ -20,3 +20,7 @@ func _process(delta: float) -> void:
 
 func _on_coin_pressed() -> void:
 	GameStatus.coin += 100
+
+
+func _on_texture_button_2_pressed() -> void:
+	tower_selected.emit(preload("res://scenes/turret.tscn"), 100)
