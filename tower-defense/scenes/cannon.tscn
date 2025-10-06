@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dfs8mkf7q4fuw" path="res://assets/models/kenny/Models/OBJ format/weapon-cannon.obj" id="1_xuqfy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y22rs"]
-size = Vector3(1, 0.155334, 1)
+size = Vector3(0.658508, 0.528809, 0.558594)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pxhkx"]
 radius = 3.5
@@ -19,7 +19,7 @@ mesh = ExtResource("1_xuqfy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376871, 0.356979)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0708923, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0116882, 0.26, 0.046875)
 shape = SubResource("BoxShape3D_y22rs")
 
 [node name="MobDetector" type="Area3D" parent="."]

@@ -8,6 +8,7 @@ var camera: Camera3D
 var ghost_instance: Node3D = null
 var selected_tower_scene: PackedScene = null
 var selected_tower_cost: int = 0
+var mode : String = "normal"
 
 # occupied tracking (uses string keys "x_y_z")
 var occupied_cells := {}
@@ -59,12 +60,16 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# right click cancels placement
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		_cancel_placement()
+		if selected_tower_scene:
+			_cancel_placement()
 
 	# left click places if a tile is highlighted
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if selected_tower_scene and ghost_instance and ghost_instance.visible:
 			_place_object_on_grid()
+	
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		_check_tower_click()
 
 func _place_object_on_grid() -> void:
 	if camera == null or grid_map == null:
@@ -176,3 +181,20 @@ func _update_ghost_material_color(node: Node, color: Color) -> void:
 				mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 				child.material_override = mat
 		_update_ghost_material_color(child, color)
+
+func _check_tower_click() -> void:
+	var camera := get_tree().get_first_node_in_group("main_camera")
+	if camera == null:
+		return
+
+	var mouse_pos = get_viewport().get_mouse_position()
+	var from = camera.project_ray_origin(mouse_pos)
+	var to = from + camera.project_ray_normal(mouse_pos) * 1000.0
+
+	var space_state = get_world_3d().direct_space_state
+	var result = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from, to))
+
+	if result.has("collider"):
+		var clicked = result.collider
+		if clicked.is_in_group("Tower"):
+			clicked._on_tower_clicked()
