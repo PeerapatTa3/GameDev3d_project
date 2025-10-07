@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbxmhmfgrmp4k"]
+[gd_scene load_steps=5 format=3 uid="uid://cbxmhmfgrmp4k"]
 
 [ext_resource type="Script" uid="uid://barpe77rh4bog" path="res://Scrips/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://bn2yl8obiktaf" path="res://assets/Images/menu3.jpg" id="1_l6cm7"]
-[ext_resource type="PackedScene" uid="uid://nhn7iebi25v" path="res://scenes/test.tscn" id="2_wu84c"]
 [ext_resource type="PackedScene" uid="uid://kfwgww1iirw4" path="res://scenes/setting.tscn" id="3_8ln24"]
-[ext_resource type="FontFile" path="res://assets/font/Ethnocentric Rg It.otf" id="5_8ln24"]
+[ext_resource type="FontFile" uid="uid://bmwb85pxus4qf" path="res://assets/font/Ethnocentric Rg It.otf" id="5_8ln24"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -14,7 +13,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ekxnf")
-scene = ExtResource("2_wu84c")
 scene2 = ExtResource("3_8ln24")
 metadata/_edit_use_anchors_ = true
 
@@ -90,5 +88,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/bg2"]
+layout_mode = 0
+anchor_left = 0.444444
+anchor_top = 0.455247
+anchor_right = 0.592014
+anchor_bottom = 0.560185
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Snow"
+popup/item_0/id = 0
+popup/item_1/text = "Grass"
+popup/item_1/id = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/bg2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.486979
+anchor_top = 0.395062
+anchor_right = 0.578125
+anchor_bottom = 0.453704
+theme_override_font_sizes/font_size = 30
+text = "Map"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="CanvasLayer/bg2/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/bg2/setting" to="." method="_on_setting_pressed"]
+[connection signal="item_selected" from="CanvasLayer/bg2/OptionButton" to="." method="_on_option_button_item_selected"]
