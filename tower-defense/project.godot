@@ -18,3 +18,4 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameStatus="*res://Scrips/GameStats.gd"
+AudioManager="*res://scenes/audio/audio_manager.tscn"
