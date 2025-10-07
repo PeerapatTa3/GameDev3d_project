@@ -5,3 +5,4 @@
 [node name="Tank_ufo" type="PathFollow3D"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_5m1av")]
+kill_point = 10

@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	$CanvasLayer/Kill.text = "Kill : " + str(GameStatus.kills)
 	$CanvasLayer/Enemy.text = "Enemy : " + str(GameStatus.enemies_remaining)
 	$CanvasLayer/wave.text = "Wave " + str(GameStatus.wave)
+	$CanvasLayer/Hp_bar.value = GameStatus.hp
 
 func _on_coin_pressed() -> void:
 	GameStatus.coin += 100
@@ -30,9 +31,11 @@ func _on_texture_button_2_pressed() -> void:
 
 
 func _on_setting_pressed() -> void:
-	var current_scene = get_tree().current_scene
-	get_tree().set_meta("previous_scene_path", current_scene.scene_file_path)
-	get_tree().change_scene_to_file("res://scenes/setting.tscn")
+	#var current_scene = get_tree().current_scene
+	#get_tree().set_meta("previous_scene_path", current_scene.scene_file_path)
+	#get_tree().change_scene_to_file("res://scenes/setting.tscn")
+	var setting_scene = load("res://scenes/setting.tscn").instantiate()
+	get_tree().current_scene.add_child(setting_scene)
 
 
 func _on_texture_button_3_pressed() -> void:
@@ -40,3 +43,7 @@ func _on_texture_button_3_pressed() -> void:
 
 func _on_texture_button_4_pressed() -> void:
 	tower_selected.emit(preload("res://scenes/tower/turretpurple.tscn"), 150)
+
+
+func _on_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

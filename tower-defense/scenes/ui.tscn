@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlnnp8xhhsnxm"]
+[gd_scene load_steps=10 format=3 uid="uid://dlnnp8xhhsnxm"]
 
 [ext_resource type="Script" uid="uid://dtbmahwf3h80i" path="res://Scrips/ui.gd" id="1_x4jx1"]
 [ext_resource type="Texture2D" uid="uid://m4ghurox2tj4" path="res://assets/Images/canon.png" id="2_p7vwb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://xrv1q015s8r7" path="res://assets/Images/coin0 (1).png" id="4_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://dhx233j2sq10p" path="res://assets/Images/t4.png" id="5_7dvkv"]
 [ext_resource type="Texture2D" uid="uid://d2p8gx1wgsl4p" path="res://assets/Images/setting.png" id="6_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://cl57438tm6kgk" path="res://assets/Images/Home.png" id="8_cgfq5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7vwb"]
 bg_color = Color(9.62615e-08, 0.715921, 0.401295, 1)
@@ -163,6 +164,25 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="Buttons3" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainMenu" type="TextureButton" parent="CanvasLayer/Buttons3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 25.275
+anchor_top = 0.125
+anchor_right = 26.85
+anchor_bottom = 1.65
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_cgfq5")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
 [node name="wave" type="Label" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -255,16 +275,19 @@ text = "HP :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="Hp_bar" type="ProgressBar" parent="CanvasLayer"]
 offset_left = 252.0
 offset_top = 609.0
 offset_right = 918.0
 offset_bottom = 636.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_p7vwb")
+max_value = 10.0
+step = 1.0
 
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton4" to="." method="_on_texture_button_4_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons2/setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons3/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Coin" to="." method="_on_coin_pressed"]

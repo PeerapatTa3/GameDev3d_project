@@ -5,3 +5,4 @@
 [node name="speed_ufo" type="PathFollow3D"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_dkh01")]
+kill_point = 10

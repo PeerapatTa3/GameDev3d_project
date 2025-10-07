@@ -72,13 +72,8 @@ func _setup_sphere_attack():
 # ==============================
 func _process(_delta):
 	if is_instance_valid(curr):
-<<<<<<< Updated upstream
-		look_at(curr.global_position)
-		rotate_y(deg_to_rad(180))
-=======
-		look_at_xz(curr.global_position)
-		
->>>>>>> Stashed changes
+		$MeshInstance3D.look_at(curr.global_position)
+		$MeshInstance3D.rotate_y(deg_to_rad(180))
 		if can_shoot:
 			shoot()
 			can_shoot = false
@@ -183,6 +178,10 @@ func _on_shooting_cool_down_timeout() -> void:
 # ==============================
 # 🧠 Upgrade System
 # ==============================
+func _input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		_on_tower_clicked()
+
 func _on_tower_clicked():
 	print("Upgrade Tower")
 	if upgrade_level >= max_upgrade_level:
@@ -240,8 +239,3 @@ func _update_debug_mesh():
 	sphere_mesh.rings = 16
 
 	debug_mesh.mesh = sphere_mesh
-
-func look_at_xz(target_position: Vector3) -> void:
-	var flat_target = Vector3(target_position.x, $MeshInstance3D.global_position.y, target_position.z)
-	$MeshInstance3D.look_at(flat_target)
-	$MeshInstance3D.rotate_y(deg_to_rad(180))

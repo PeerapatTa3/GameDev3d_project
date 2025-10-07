@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d20i0l6u5avm8"]
+
+[ext_resource type="Script" uid="uid://bfrny1552os18" path="res://Scrips/audio_manager.gd" id="1_iognr"]
+[ext_resource type="AudioStream" uid="uid://bmy4d5g3ud213" path="res://assets/sfx/music/bg_main.mp3" id="2_2ccwd"]
+[ext_resource type="AudioStream" uid="uid://cfpimiw0i0tsp" path="res://assets/sfx/music/stage_music.mp3" id="2_oarm6"]
+[ext_resource type="AudioStream" uid="uid://cboan5ox5kowu" path="res://assets/sfx/music/bg_win.mp3" id="3_cfl81"]
+[ext_resource type="AudioStream" uid="uid://cglbejbeu21ec" path="res://assets/sfx/music/gameover.mp3" id="5_cfl81"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_iognr")
+
+[node name="Bg_main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2ccwd")
+volume_db = -10.532
+bus = &"Music"
+
+[node name="Bg_win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cfl81")
+bus = &"Music"
+
+[node name="Bg_stage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oarm6")
+bus = &"Music"
+
+[node name="Bg_gameover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cfl81")
+volume_db = -10.093
+bus = &"Music"
