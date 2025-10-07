@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c043q81po6lxk"]
+
+[ext_resource type="Script" uid="uid://dvmwu5bejwcbr" path="res://Scrips/enemy.gd" id="1_1m4qq"]
+[ext_resource type="ArrayMesh" uid="uid://d2ur3vgsoogpm" path="res://assets/models/kenny/Models/OBJ format/enemy-ufo-d.obj" id="2_jox75"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rmjyy"]
+height = 0.669189
+
+[node name="Tank_ufo" type="PathFollow3D"]
+
+[node name="Enemy" type="CharacterBody3D" parent="." groups=["Enemy"]]
+script = ExtResource("1_1m4qq")
+speed = 1
+hp = 100
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy"]
+mesh = ExtResource("2_jox75")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3302, 0)
+shape = SubResource("CylinderShape3D_rmjyy")
