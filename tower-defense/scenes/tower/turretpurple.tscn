@@ -13,6 +13,7 @@ size = Vector3(0.938187, 2.17408, 0.99942)
 radius = 9.9571
 
 [node name="StaticBody3D" type="StaticBody3D" node_paths=PackedStringArray("attack_range", "timer")]
+collision_layer = 2
 script = ExtResource("1_5s4m5")
 tower_name = "Turret"
 attack_range = NodePath("MobDetector")

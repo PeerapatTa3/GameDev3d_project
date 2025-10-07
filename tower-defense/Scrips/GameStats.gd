@@ -1,11 +1,8 @@
 extends Node
 class_name GameStats
 
-var hp : int
-var coin : int
-var kill : int
-var wave : int
-
-func _ready() -> void:
-	coin = 100
-	hp = 10
+var hp : int = 10
+var coin : int = 100
+var kills : int = 0
+var wave : int = 1
+var enemies_remaining : int = 0

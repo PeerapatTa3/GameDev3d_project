@@ -202,7 +202,7 @@ func _on_tower_clicked():
 	
 	_update_debug_mesh()
 	print("🔼 Tower upgraded to level %d! New damage: %d" % [upgrade_level, bullet_damage])
-	$MeshInstance3D.scale *= 1.1
+	$".".scale *= 1.2
 
 # ======================
 # 🧠 Debug Drawing Section (solid SPHERE only)
