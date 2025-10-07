@@ -9,7 +9,7 @@ class_name Spawn_Point
 # ==============================
 # 🌊 Wave Settings
 # ==============================
-@export var base_enemy_count : int = 20
+@export var base_enemy_count : int = 5
 @export var enemy_increase_per_wave : int = 2
 @export var base_enemy_hp : int = 10
 @export var hp_increase_per_wave : float = 1.2
