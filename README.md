@@ -22,19 +22,16 @@ v1.0 [https://peerapatta3.github.io/GameDev2D-project/](https://peerapatta3.gith
 (https://docs.google.com/document/d/1A4hYcsla-pby8IAX4fqum4PR7yneTXulWRHwXYmHHCo/edit?usp=sharing)
 
 # Screenshots
-<img width="641" height="399" alt="image" src="https://github.com/user-attachments/assets/ef0863d7-922f-4ef1-b629-2b32687fb137" />
-<img width="644" height="403" alt="image" src="https://github.com/user-attachments/assets/5ac75fe2-f219-4d0d-bff1-9d624a839849" />
-<img width="960" height="461" alt="image" src="https://github.com/user-attachments/assets/b9a83944-68e8-44c7-9a6a-8455232c2b08" />
-<img width="960" height="456" alt="image" src="https://github.com/user-attachments/assets/eecbbad5-c441-489c-9c40-43ae60cf1843" />
+
 
 
 
 # Characters
-ตัวเอกหรือผู้เล่น เป็นนักวางแผนอันเก่งกาจ เคยมีชื่อเสียงจากการวางแผนต่างๆมามากมาย
-<img width="128" height="128" alt="Walk" src="https://github.com/user-attachments/assets/a54b45f1-78e1-442e-a6af-c8246b10686d" />  
 Enemys  
-<img width="128" height="128" alt="Walk" src="https://github.com/user-attachments/assets/553038f9-1e93-4d27-97e0-0a2e5de3040b" />  
-<img width="128" height="128" alt="ElfWalk" src="https://github.com/user-attachments/assets/11bc6264-0372-471f-b0ef-ac1403cadd69" />
+<img width="727" height="550" alt="image" src="https://github.com/user-attachments/assets/64f398ac-3a9e-4fbe-996e-450338e5c919" />
+<img width="671" height="447" alt="image" src="https://github.com/user-attachments/assets/d14ba17e-1d4b-41f7-9a15-5024b56c358d" />
+<img width="580" height="417" alt="image" src="https://github.com/user-attachments/assets/80b13c49-aae4-440e-935b-072615e2d1e1" />
+
 
 # รูปแบบการเล่น และ กติกา
 	1.3D TowerDefend ผู้เล่นจะได้ควบคุมกล้องจากมุมสูง และส้รางป้อมต่างๆ เพื่อป้องกันไม่ให้ศัตรูเดินเข้าไปถึงฐานของเราได้
@@ -57,7 +54,7 @@ Enemys
 
 # การวิเคราะห์เกม AGE Analysis
 	อารมณ์ของเกม:
-		ความเศร้า-เสียใจ เล่นแพ้ ศัตรูเดินเข้าไปถึงฐานได้จำนวนมาก
+		ความเศร้า-เสียใจ เล่นแพ้ ศัตรูผ่านเข้าไปถึงฐานได้จำนวนมาก
 		ความโกรธ การได้รับรู้ว่าศัตรูจะบุกมารุกรานประเทศของตน 
 		ความตื่นเต้น ได้วางแผนวางป้อมจัดการศัตรูแต่ละแบบตามสไตล์ตัวเอง
 		ความกลัว -
