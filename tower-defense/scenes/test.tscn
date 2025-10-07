@@ -1,11 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpdp0kck41psl"]
+[gd_scene load_steps=12 format=3 uid="uid://nhn7iebi25v"]
 
 [ext_resource type="Script" uid="uid://dk5qakt24es0e" path="res://Scrips/test.gd" id="1_j5jx5"]
+[ext_resource type="Texture2D" uid="uid://cg6mh8os3omuv" path="res://assets/sky/sky1.exr" id="2_at5dv"]
 [ext_resource type="PackedScene" uid="uid://bss0f6qvwlqht" path="res://scenes/camera.tscn" id="2_bl13t"]
-[ext_resource type="PackedScene" uid="uid://dvse34o2skbh4" path="res://scenes/mouse_handler.tscn" id="2_lpvoh"]
-[ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://scenes/snown_map.tscn" id="3_74lek"]
+[ext_resource type="PackedScene" uid="uid://dkf87uvabisam" path="res://scenes/mouse_handler.tscn" id="2_lpvoh"]
+[ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://Map/snown_map.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://dlnnp8xhhsnxm" path="res://scenes/ui.tscn" id="4_74lek"]
 [ext_resource type="PackedScene" uid="uid://ddmkfnmhl3283" path="res://scenes/ui_upgrade.tscn" id="6_lpvoh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jcd4p"]
+panorama = ExtResource("2_at5dv")
+
+[sub_resource type="Sky" id="Sky_uacia"]
+sky_material = SubResource("PanoramaSkyMaterial_jcd4p")
+
+[sub_resource type="Environment" id="Environment_yk7ts"]
+background_mode = 2
+sky = SubResource("Sky_uacia")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="Curve3D" id="Curve3D_lpvoh"]
 _data = {
@@ -18,6 +31,9 @@ point_count = 10
 script = ExtResource("1_j5jx5")
 placement_ui = NodePath("UI")
 placement_manager = NodePath("MouseHandler")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yk7ts")
 
 [node name="MouseHandler" parent="." node_paths=PackedStringArray("grid_map", "upgrade_ui") instance=ExtResource("2_lpvoh")]
 grid_map = NodePath("../snown_map")

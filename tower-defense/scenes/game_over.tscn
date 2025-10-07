@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://chybxbts1fg38"]
+
+[ext_resource type="Texture2D" uid="uid://c0en61rwi3v36" path="res://assets/Images/gameover.jpg" id="1_xeevv"]
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xeevv")
+expand_mode = 1
+
+[node name="Mainmenu" type="Button" parent="."]
+offset_left = 426.0
+offset_top = 468.0
+offset_right = 645.0
+offset_bottom = 543.0
+scale = Vector2(1.38216, 1.36842)
+theme_override_font_sizes/font_size = 33
+text = "Main menu"
+
+[node name="Gameover" type="Label" parent="."]
+offset_left = 135.0
+offset_top = 143.0
+offset_right = 1011.0
+offset_bottom = 310.0
+theme_override_font_sizes/font_size = 150
+text = "GameOver"
+horizontal_alignment = 1
+vertical_alignment = 1

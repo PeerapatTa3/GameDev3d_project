@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvkhbd3qhomsb"]
+
+[ext_resource type="Script" uid="uid://b4h3xnic1g8s1" path="res://Scrips/tower.gd" id="1_el7wl"]
+[ext_resource type="ArrayMesh" uid="uid://c2aeqtjt8dw2h" path="res://assets/models/kenny/Models/OBJ format/weapon-turret.obj" id="2_485p4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pp6j5"]
+size = Vector3(0.658508, 0.528809, 0.558594)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6fjxm"]
+radius = 3.5
+
+[node name="turret" type="StaticBody3D"]
+script = ExtResource("1_el7wl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_485p4")
+
+[node name="aim" type="Marker3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376871, 0.356979)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0116882, 0.26, 0.046875)
+shape = SubResource("BoxShape3D_pp6j5")
+
+[node name="MobDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+shape = SubResource("SphereShape3D_6fjxm")
+
+[node name="bulletContainner" type="Node" parent="."]
+
+[node name="ShootingCoolDown" type="Timer" parent="."]

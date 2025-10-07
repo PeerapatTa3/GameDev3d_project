@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqxwgl3ohdocr"]
+
+[ext_resource type="Texture2D" uid="uid://cyniwso43f7u0" path="res://assets/Images/Youwin.jpg" id="1_p8sko"]
+
+[node name="Youwin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p8sko")
+expand_mode = 1
+
+[node name="Mainmenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 468.0
+offset_right = 679.0
+offset_bottom = 543.0
+scale = Vector2(1.38216, 1.36842)
+theme_override_font_sizes/font_size = 33
+text = "Main menu"
+
+[node name="youwin" type="Label" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 33.0
+offset_right = 1061.0
+offset_bottom = 238.0
+theme_override_font_sizes/font_size = 150
+text = "You Win!"
+horizontal_alignment = 1
+vertical_alignment = 1

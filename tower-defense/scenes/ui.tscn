@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlnnp8xhhsnxm"]
+[gd_scene load_steps=8 format=3 uid="uid://dlnnp8xhhsnxm"]
 
-[ext_resource type="Texture2D" uid="uid://ikq1qwpoye" path="res://assets/Images/Untitled.jpg" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://dtbmahwf3h80i" path="res://Scrips/ui.gd" id="1_x4jx1"]
-[ext_resource type="Texture2D" uid="uid://dthtycn7uv7gm" path="res://assets/Images/889717.png" id="3_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://m4ghurox2tj4" path="res://assets/Images/canon.png" id="2_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://csj5lt13c5hls" path="res://assets/Images/t2.png" id="3_ktti3"]
+[ext_resource type="Texture2D" uid="uid://cunufkk2u2h8j" path="res://assets/Images/t3.png" id="4_cgfq5"]
 [ext_resource type="Texture2D" uid="uid://xrv1q015s8r7" path="res://assets/Images/coin0 (1).png" id="4_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://dhx233j2sq10p" path="res://assets/Images/t4.png" id="5_7dvkv"]
+[ext_resource type="Texture2D" uid="uid://d2p8gx1wgsl4p" path="res://assets/Images/setting.png" id="6_p7vwb"]
 
 [node name="UI" type="Node"]
 script = ExtResource("1_x4jx1")
@@ -19,26 +22,118 @@ offset_bottom = 40.0
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 9.8
-anchor_top = 13.85
-anchor_right = 11.375
-anchor_bottom = 15.375
-texture_normal = ExtResource("1_nt7q6")
+anchor_left = 9.825
+anchor_top = 13.45
+anchor_right = 11.4
+anchor_bottom = 14.975
+texture_normal = ExtResource("2_p7vwb")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="coin1" type="Label" parent="CanvasLayer/Buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 379.0
+offset_top = 599.0
+offset_right = 429.0
+offset_bottom = 641.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.992157, 0.8, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 11.725
-anchor_top = 13.875
-anchor_right = 13.3
-anchor_bottom = 15.4
-texture_normal = ExtResource("1_nt7q6")
+anchor_left = 11.75
+anchor_top = 13.475
+anchor_right = 13.325
+anchor_bottom = 15.0
+texture_normal = ExtResource("3_ktti3")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="coin2" type="Label" parent="CanvasLayer/Buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 454.0
+offset_top = 600.0
+offset_right = 504.0
+offset_bottom = 642.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.992157, 0.8, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.625
+anchor_top = 13.5
+anchor_right = 15.2
+anchor_bottom = 15.025
+texture_normal = ExtResource("4_cgfq5")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="coin3" type="Label" parent="CanvasLayer/Buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 528.0
+offset_top = 602.0
+offset_right = 578.0
+offset_bottom = 642.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.992157, 0.8, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="CanvasLayer/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.5
+anchor_top = 13.5
+anchor_right = 17.075
+anchor_bottom = 15.025
+texture_normal = ExtResource("5_7dvkv")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="coin4" type="Label" parent="CanvasLayer/Buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 607.0
+offset_top = 600.0
+offset_right = 657.0
+offset_bottom = 642.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.992157, 0.8, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Buttons2" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -53,7 +148,7 @@ anchor_left = 27.025
 anchor_top = 0.125
 anchor_right = 28.6
 anchor_bottom = 1.65
-texture_normal = ExtResource("3_gdt2y")
+texture_normal = ExtResource("6_p7vwb")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -136,4 +231,5 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Coin" to="." method="_on_coin_pressed"]

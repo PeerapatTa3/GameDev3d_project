@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl1aefbgx7qyq"]
+
+[ext_resource type="ArrayMesh" uid="uid://c3smmkyl66pcm" path="res://assets/models/kenny/Models/OBJ format/tower-square-build-c.obj" id="1_s2piw"]
+[ext_resource type="ArrayMesh" uid="uid://d0d5gxj2v1q71" path="res://assets/models/kenny/Models/OBJ format/tower-square-middle-b.obj" id="2_ld1v7"]
+[ext_resource type="ArrayMesh" uid="uid://86fn2b5cnxlo" path="res://assets/models/kenny/Models/OBJ format/tower-square-middle-c.obj" id="3_ld1v7"]
+[ext_resource type="ArrayMesh" uid="uid://bg3q8jes4vyyi" path="res://assets/models/kenny/Models/OBJ format/weapon-ballista.obj" id="4_r3u42"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pud63"]
+size = Vector3(0.938187, 2.17408, 0.99942)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tjmq5"]
+radius = 9.9571
+
+[node name="TowerPurple" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_s2piw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.954557, 0)
+mesh = ExtResource("2_ld1v7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49334, 0)
+mesh = ExtResource("3_ld1v7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67224, 0)
+mesh = ExtResource("4_r3u42")
+
+[node name="aim" type="Marker3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376871, 0.356979)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0232619, 1.08264, 0.00221255)
+shape = SubResource("BoxShape3D_pud63")
+
+[node name="MobDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+shape = SubResource("SphereShape3D_tjmq5")
+
+[node name="bulletContainner" type="Node" parent="."]
+
+[node name="ShootingCoolDown" type="Timer" parent="."]

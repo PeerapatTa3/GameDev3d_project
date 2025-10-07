@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://kfwgww1iirw4"]
+
+[ext_resource type="Texture2D" uid="uid://de810ucfvruj" path="res://assets/Images/Asset1.png" id="1_sjyvh"]
+
+[node name="Setting" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+offset_left = 124.0
+offset_top = 38.0
+offset_right = 17692.0
+offset_bottom = 9386.0
+scale = Vector2(0.0547602, 0.0600855)
+texture = ExtResource("1_sjyvh")
+region_rect = Rect2(178.312, 161.026, 2523.25, 1593.95)
+
+[node name="Setting" type="Label" parent="CanvasLayer"]
+offset_left = 483.0
+offset_top = 40.0
+offset_right = 708.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Setting"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music_label" type="Label" parent="CanvasLayer"]
+offset_left = 190.0
+offset_top = 188.0
+offset_right = 415.0
+offset_bottom = 269.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Music :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music" type="HSlider" parent="CanvasLayer"]
+offset_left = 387.0
+offset_top = 203.0
+offset_right = 701.0
+offset_bottom = 234.0
+scale = Vector2(2, 2)
+
+[node name="Sound_label" type="Label" parent="CanvasLayer"]
+offset_left = 194.0
+offset_top = 257.0
+offset_right = 419.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Sound :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sound" type="HSlider" parent="CanvasLayer"]
+offset_left = 386.0
+offset_top = 273.0
+offset_right = 700.0
+offset_bottom = 304.0
+scale = Vector2(2, 2)
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 499.0
+offset_top = 426.0
+offset_right = 702.0
+offset_bottom = 507.0
+theme_override_font_sizes/font_size = 30
+text = "Back"
