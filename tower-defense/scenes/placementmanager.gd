@@ -106,6 +106,7 @@ func _place_object_on_grid() -> void:
 	tower.position = cell_pos
 	tower.placed_cell = cell
 	get_tree().current_scene.add_child(tower)
+	tower.debug_mesh.visible = false
 
 	# mark occupied
 	occupied_cells[_cell_key(cell)] = true

@@ -5,7 +5,10 @@ extends CharacterBody3D
 @export var coin_on_kill : int = 10
 @export var kill_point : int = 1
 
-@onready var Path : PathFollow3D = get_parent()
+var Path : PathFollow3D
+
+func _ready() -> void:
+	Path = get_parent()
 
 func _physics_process(delta):
 	Path.set_progress(Path.get_progress() + speed * delta)

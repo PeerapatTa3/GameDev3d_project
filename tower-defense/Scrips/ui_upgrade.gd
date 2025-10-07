@@ -16,6 +16,7 @@ func _upgrade_open(body : Node)->void:
 	_input_tower_stat()
 
 func _input_tower_stat():
+	upgrade_traget.debug_mesh.visible = true
 	$CanvasLayer/Panel/NameTower.text = upgrade_traget.tower_name
 	$CanvasLayer/VBoxContainer/Level/Old_Level.text = str(upgrade_traget.upgrade_level)
 	$CanvasLayer/VBoxContainer/Level/New_Level.text = str(upgrade_traget.upgrade_level + 1)
@@ -23,6 +24,7 @@ func _input_tower_stat():
 	$CanvasLayer/VBoxContainer/Damage/New_damage.text = str(upgrade_traget.bullet_damage + upgrade_traget.upgrade_damage_bonus)
 	$CanvasLayer/VBoxContainer/Range/Old_Range.text = "%.1f" % [upgrade_traget.attack_shape.radius]
 	$CanvasLayer/VBoxContainer/Range/New_Range.text = "%.1f" % [upgrade_traget.attack_shape.radius + upgrade_traget.upgrade_range_bonus]
+	$CanvasLayer/Panel/Piority.selected = upgrade_traget.target_priority
 	
 	if upgrade_traget.upgrade_level >= upgrade_traget.max_upgrade_level:
 		$CanvasLayer/VBoxContainer/Level/arrow3.hide()
@@ -42,6 +44,7 @@ func _input_tower_stat():
 
 func _close_upgrade_menu()->void:
 	$CanvasLayer.hide()
+	upgrade_traget.debug_mesh.visible = false
 	upgrade_traget = null
 
 func _on_sell_pressed() -> void:
@@ -55,3 +58,6 @@ func _on_upgrade_pressed() -> void:
 
 func _on_close_pressed() -> void:
 	_close_upgrade_menu()
+
+func _on_piority_item_selected(index: int) -> void:
+	upgrade_traget.target_priority = index

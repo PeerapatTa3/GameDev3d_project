@@ -1,6 +1,7 @@
 extends Node3D
 
-@onready var enemy : PackedScene = preload("res://Mob/ufo.tscn")
+@onready var PathFollow : PackedScene = preload("res://Mob/ufo.tscn")
+@onready var Enemy : PackedScene = preload("res://Mob/enemy.tscn")
 
 var enemy_to_spawn : int = 10
 var can_spawn : bool = true
@@ -18,8 +19,10 @@ func game_maneger() -> void:
 	if enemy_to_spawn > 0 and can_spawn:
 		$SpawnTimer.start()
 		
-		var tempEnemy = enemy.instantiate()
-		$Path.add_child(tempEnemy)
+		var temp = PathFollow.instantiate()
+		var tempEnemy = Enemy.instantiate()
+		$Path.add_child(temp)
+		temp.add_child(tempEnemy)
 		
 		enemy_to_spawn -= 1
 		

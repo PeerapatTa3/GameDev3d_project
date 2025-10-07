@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b32wixyp3xbr"]
 
-[ext_resource type="Script" path="res://scenes/cannon.gd" id="1_pxhkx"]
+[ext_resource type="Script" uid="uid://b1jr4cb0e34iu" path="res://scenes/cannon.gd" id="1_pxhkx"]
 [ext_resource type="ArrayMesh" uid="uid://dfs8mkf7q4fuw" path="res://assets/models/kenny/Models/OBJ format/weapon-cannon.obj" id="1_xuqfy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y22rs"]

@@ -114,6 +114,34 @@ offset_bottom = 47.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "X"
 
+[node name="Piority" type="OptionButton" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 426.0
+offset_right = 289.0
+offset_bottom = 469.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.921569, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mt1bt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l5htj")
+alignment = 1
+selected = 1
+item_count = 4
+popup/item_0/text = "FIRST"
+popup/item_0/id = 0
+popup/item_1/text = "LAST"
+popup/item_1/id = 1
+popup/item_2/text = "STRONGEST"
+popup/item_2/id = 2
+popup/item_3/text = "CLOSEST"
+popup/item_3/id = 3
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 852.0
 offset_top = 292.0
@@ -205,3 +233,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="CanvasLayer/Panel/Upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Sell" to="." method="_on_sell_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Close" to="." method="_on_close_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Panel/Piority" to="." method="_on_piority_item_selected"]
