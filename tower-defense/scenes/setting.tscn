@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://de810ucfvruj" path="res://assets/Images/Asset1.png" id="1_sjyvh"]
 [ext_resource type="Script" uid="uid://c5tls05ktlj72" path="res://Scrips/setting.gd" id="1_u58eq"]
 [ext_resource type="Texture2D" uid="uid://cltjc7lqxu5r3" path="res://assets/Images/Screenshot 2025-10-08 023739.png" id="2_scrng"]
-[ext_resource type="FontFile" path="res://assets/font/Ethnocentric Rg It.otf" id="3_7k1fe"]
+[ext_resource type="FontFile" uid="uid://bmwb85pxus4qf" path="res://assets/font/Ethnocentric Rg It.otf" id="3_7k1fe"]
 
 [node name="Setting" type="Node"]
 
@@ -101,6 +101,7 @@ offset_bottom = -31.0
 rotation = -0.00446398
 scale = Vector2(2, 2)
 mouse_default_cursor_shape = 2
+editable = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="CanvasLayer/TextureRect"]

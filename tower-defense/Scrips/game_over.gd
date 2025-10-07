@@ -4,9 +4,9 @@ extends Control
 
 func  _ready() -> void:
 	GameStatus.hp = 10
+	GameStatus.coin = 100
 	AudioManager.Bg_gameover.play()
 	$TextureRect/Wave.text = "You survived for (" + str(GameStatus.wave) + ") waves!!"
-
 
 func _on_mainmenu_pressed() -> void:
 	get_tree().change_scene_to_packed(Scene)
