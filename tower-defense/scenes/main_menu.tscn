@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbxmhmfgrmp4k"]
+[gd_scene load_steps=6 format=3 uid="uid://cbxmhmfgrmp4k"]
 
 [ext_resource type="Script" uid="uid://barpe77rh4bog" path="res://Scrips/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://bn2yl8obiktaf" path="res://assets/Images/menu3.jpg" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://nhn7iebi25v" path="res://scenes/test.tscn" id="2_wu84c"]
 [ext_resource type="PackedScene" uid="uid://kfwgww1iirw4" path="res://scenes/setting.tscn" id="3_8ln24"]
+[ext_resource type="FontFile" path="res://assets/font/Ethnocentric Rg It.otf" id="5_8ln24"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -15,49 +16,79 @@ grow_vertical = 2
 script = ExtResource("1_ekxnf")
 scene = ExtResource("2_wu84c")
 scene2 = ExtResource("3_8ln24")
+metadata/_edit_use_anchors_ = true
 
-[node name="bg" type="TextureRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="bg" type="TextureRect" parent="CanvasLayer"]
 modulate = Color(0.625597, 0.625597, 0.625597, 1)
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_l6cm7")
+metadata/_edit_use_anchors_ = true
 
-[node name="Play" type="Button" parent="."]
-layout_mode = 0
-offset_left = 680.0
-offset_top = 288.0
-offset_right = 899.0
-offset_bottom = 363.0
+[node name="bg2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="CanvasLayer/bg2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.618924
+anchor_top = 0.429012
+anchor_right = 0.880478
+anchor_bottom = 0.614847
+offset_right = -83.3109
+offset_bottom = -32.421
 scale = Vector2(1.38216, 1.36842)
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("5_8ln24")
 theme_override_font_sizes/font_size = 33
 text = "Play"
+metadata/_edit_use_anchors_ = true
 
-[node name="setting" type="Button" parent="."]
-layout_mode = 0
-offset_left = 678.0
-offset_top = 409.0
-offset_right = 897.0
-offset_bottom = 484.0
+[node name="setting" type="Button" parent="CanvasLayer/bg2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.618924
+anchor_top = 0.665123
+anchor_right = 0.882878
+anchor_bottom = 0.850958
+offset_right = -84.0752
+offset_bottom = -32.421
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.38216, 1.36842)
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("5_8ln24")
 theme_override_font_sizes/font_size = 33
 text = "setting"
+metadata/_edit_use_anchors_ = true
 
-[node name="Name" type="Label" parent="."]
-layout_mode = 0
-offset_left = 224.0
-offset_top = 40.0
-offset_right = 1036.0
-offset_bottom = 177.0
-theme_override_font_sizes/font_size = 100
-text = "Sox Kee mah SS2"
+[node name="Name" type="Label" parent="CanvasLayer/bg2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0390625
+anchor_top = 0.0401235
+anchor_right = 1.02908
+anchor_bottom = 0.255068
+offset_right = -0.00012207
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 17
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 80
+text = "Kingdom vs UFO"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="CanvasLayer/bg2/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/bg2/setting" to="." method="_on_setting_pressed"]
