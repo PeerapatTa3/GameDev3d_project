@@ -15,7 +15,7 @@
  
 # Play
 
-v1.0 [https://peerapatta3.github.io/GameDev2D-project/](https://peerapatta3.github.io/GameDev2D-project/](https://peerapatta3.github.io/GameDev3d_project/))
+v1.0 [[https://peerapatta3.github.io/GameDev2D-project/](https://peerapatta3.github.io/GameDev2D-project/](https://peerapatta3.github.io/GameDev3d_project/))](https://peerapatta3.github.io/GameDev3d_project/)
 
 # Docs
 
