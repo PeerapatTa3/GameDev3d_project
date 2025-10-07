@@ -19,7 +19,7 @@ v1.0 [https://peerapatta3.github.io/GameDev2D-project/](https://peerapatta3.gith
 
 # Docs
 
-[https://docs.google.com/document/d/1AK1aA2Nv2sVM4ZDxPEQv1ubHGpCAcKGGA1k6zbpur5U/edit?usp=sharing](https://docs.google.com/document/d/1AK1aA2Nv2sVM4ZDxPEQv1ubHGpCAcKGGA1k6zbpur5U/edit?usp=sharing)
+[https://docs.google.com/document/d/1AK1aA2Nv2sVM4ZDxPEQv1ubHGpCAcKGGA1k6zbpur5U/edit?usp=sharing](https://docs.google.com/document/d/1A4hYcsla-pby8IAX4fqum4PR7yneTXulWRHwXYmHHCo/edit?tab=t.0)
 
 # Screenshots
 <img width="641" height="399" alt="image" src="https://github.com/user-attachments/assets/ef0863d7-922f-4ef1-b629-2b32687fb137" />
