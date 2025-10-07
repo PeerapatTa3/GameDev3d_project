@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://cqqnjjpli6mj1" path="res://Scrips/ui_upgrade.gd" id="1_4crww"]
 [ext_resource type="Texture2D" uid="uid://m4ghurox2tj4" path="res://assets/Images/canon.png" id="1_xqsa5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ha0k0"]
-bg_color = Color(0.00571485, 0.0657002, 0.217825, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.938373, 0.592468, 3.85046e-07, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4crww"]
+bg_color = Color(0.407843, 0.298039, 0.298039, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.858824, 0.74902, 0.494118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt1bt"]
 bg_color = Color(0.6, 0.87451, 0, 0.741176)
@@ -44,7 +48,7 @@ script = ExtResource("1_4crww")
 offset_left = 719.0
 offset_right = 1151.0
 offset_bottom = 644.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ha0k0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4crww")
 
 [node name="towerImg" type="TextureRect" parent="CanvasLayer/Panel"]
 layout_mode = 0

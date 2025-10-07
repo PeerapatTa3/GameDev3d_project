@@ -22,6 +22,7 @@ texture = ExtResource("1_p8sko")
 expand_mode = 1
 
 [node name="Mainmenu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 460.0
 offset_top = 468.0
 offset_right = 679.0
@@ -31,6 +32,7 @@ theme_override_font_sizes/font_size = 33
 text = "Main menu"
 
 [node name="youwin" type="Label" parent="."]
+layout_mode = 0
 offset_left = 185.0
 offset_top = 33.0
 offset_right = 1061.0
