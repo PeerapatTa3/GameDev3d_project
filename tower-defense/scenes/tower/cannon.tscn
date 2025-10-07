@@ -13,6 +13,8 @@ radius = 3.5
 collision_layer = 2
 script = ExtResource("1_n3e8h")
 tower_name = "Cannon"
+upgrade_damage_bonus = 4
+max_upgrade_level = 5
 attack_range = NodePath("MobDetector")
 timer = NodePath("ShootingCoolDown")
 

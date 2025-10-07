@@ -17,8 +17,11 @@ script = ExtResource("1_el7wl")
 tower_name = "Turret"
 bullet = ExtResource("2_aqda2")
 bullet_damage = 2
+upgrade_cost = 75
+max_upgrade_level = 10
 attack_range = NodePath("MobDetector")
 attack_speed = 0.4
+upgrade_speed_bonus = 0.01
 tower_pic = ExtResource("2_dxtby")
 timer = NodePath("ShootingCoolDown")
 
