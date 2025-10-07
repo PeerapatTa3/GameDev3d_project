@@ -7,6 +7,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_u58eq")
+Bus_name = "Music"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -47,13 +48,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="music" type="HSlider" parent="CanvasLayer"]
+[node name="Audio_music_control" type="HSlider" parent="CanvasLayer"]
 offset_left = 387.0
 offset_top = 203.0
 offset_right = 701.0
 offset_bottom = 234.0
 scale = Vector2(2, 2)
 mouse_default_cursor_shape = 2
+min_value = -80.0
+max_value = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sound_label" type="Label" parent="CanvasLayer"]
@@ -88,4 +91,5 @@ theme_override_font_sizes/font_size = 30
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
+[connection signal="value_changed" from="CanvasLayer/Audio_music_control" to="CanvasLayer" method="_on_audio_music_control_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Back" to="CanvasLayer" method="_on_back_pressed"]

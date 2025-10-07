@@ -28,9 +28,11 @@ func _on_texture_button_2_pressed() -> void:
 
 
 func _on_setting_pressed() -> void:
-	var current_scene = get_tree().current_scene
-	get_tree().set_meta("previous_scene_path", current_scene.scene_file_path)
-	get_tree().change_scene_to_file("res://scenes/setting.tscn")
+	#var current_scene = get_tree().current_scene
+	#get_tree().set_meta("previous_scene_path", current_scene.scene_file_path)
+	#get_tree().change_scene_to_file("res://scenes/setting.tscn")
+	var setting_scene = load("res://scenes/setting.tscn").instantiate()
+	get_tree().current_scene.add_child(setting_scene)
 
 
 func _on_texture_button_3_pressed() -> void:

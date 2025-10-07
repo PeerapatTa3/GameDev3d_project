@@ -11,6 +11,7 @@ var can_spawn : bool = true
 func _ready() -> void:
 	# Make sure UI has the signal defined
 	placement_ui.tower_selected.connect(placement_manager.select_tower)
+	AudioManager.Bg_stage.play()
 
 func _process(delta):
 	game_maneger()
