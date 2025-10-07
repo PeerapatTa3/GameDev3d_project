@@ -97,7 +97,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mt1bt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mt1bt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mt1bt")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l5htj")
-text = "Sell"
+text = "Remove"
 metadata/_edit_use_anchors_ = true
 
 [node name="NameTower" type="Label" parent="CanvasLayer/Panel"]

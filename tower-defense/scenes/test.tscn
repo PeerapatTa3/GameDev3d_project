@@ -59,6 +59,6 @@ curve = SubResource("Curve3D_lpvoh")
 [node name="UI_Upgrade" parent="." instance=ExtResource("6_lpvoh")]
 
 [node name="Base" parent="." instance=ExtResource("8_jcd4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5181, 0.705832, -1.51846)
+transform = Transform3D(-5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 10.5181, 0.171918, -1.51846)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
