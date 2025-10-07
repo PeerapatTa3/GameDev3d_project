@@ -51,6 +51,7 @@ func _input_tower_stat():
 		$CanvasLayer/VBoxContainer/Range/New_Range.show()
 		$CanvasLayer/VBoxContainer/Speed/arrow3.show()
 		$CanvasLayer/VBoxContainer/Speed/New_Speed.show()
+		$CanvasLayer/Panel/Cost.show()
 	
 
 func _close_upgrade_menu()->void:

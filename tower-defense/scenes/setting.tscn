@@ -101,6 +101,7 @@ offset_bottom = -31.0
 rotation = -0.00446398
 scale = Vector2(2, 2)
 mouse_default_cursor_shape = 2
+editable = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="CanvasLayer/TextureRect"]
