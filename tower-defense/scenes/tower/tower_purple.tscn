@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl1aefbgx7qyq"]
+[gd_scene load_steps=10 format=3 uid="uid://cl1aefbgx7qyq"]
 
 [ext_resource type="Script" uid="uid://b1jr4cb0e34iu" path="res://scenes/tower/cannon.gd" id="1_qbpvd"]
 [ext_resource type="ArrayMesh" uid="uid://c3smmkyl66pcm" path="res://assets/models/kenny/Models/OBJ format/tower-square-build-c.obj" id="1_s2piw"]
+[ext_resource type="PackedScene" uid="uid://d0rr0ugph5kuu" path="res://scenes/bullet/arrow.tscn" id="2_kocy8"]
 [ext_resource type="ArrayMesh" uid="uid://d0d5gxj2v1q71" path="res://assets/models/kenny/Models/OBJ format/tower-square-middle-b.obj" id="2_ld1v7"]
 [ext_resource type="Texture2D" uid="uid://cunufkk2u2h8j" path="res://assets/Images/t3.png" id="2_qdwwv"]
 [ext_resource type="ArrayMesh" uid="uid://86fn2b5cnxlo" path="res://assets/models/kenny/Models/OBJ format/tower-square-middle-c.obj" id="3_ld1v7"]
@@ -17,11 +18,16 @@ radius = 9.9571
 collision_layer = 2
 script = ExtResource("1_qbpvd")
 tower_name = "Tower_Purple"
+bullet = ExtResource("2_kocy8")
+bullet_damage = 10
+upgrade_cost = 100
+upgrade_damage_bonus = 10
 attack_range = NodePath("MobDetector")
+attack_speed = 2.0
 tower_pic = ExtResource("2_qdwwv")
 timer = NodePath("ShootingCoolDown")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D1" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_s2piw")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
@@ -32,12 +38,12 @@ mesh = ExtResource("2_ld1v7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49334, 0)
 mesh = ExtResource("3_ld1v7")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67224, 0)
 mesh = ExtResource("4_r3u42")
 
-[node name="aim" type="Marker3D" parent="MeshInstance3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376871, 0.356979)
+[node name="aim" type="Marker3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0776122, 0.454823)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0232619, 1.08264, 0.00221255)

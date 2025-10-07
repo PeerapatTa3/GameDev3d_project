@@ -72,8 +72,8 @@ func _setup_sphere_attack():
 # ==============================
 func _process(_delta):
 	if is_instance_valid(curr):
-		look_at(curr.global_position)
-		rotate_y(deg_to_rad(180))
+		$MeshInstance3D.look_at(curr.global_position)
+		$MeshInstance3D.rotate_y(deg_to_rad(180))
 		if can_shoot:
 			shoot()
 			can_shoot = false

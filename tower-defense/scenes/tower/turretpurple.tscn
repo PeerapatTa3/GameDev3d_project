@@ -20,18 +20,18 @@ attack_range = NodePath("MobDetector")
 tower_pic = ExtResource("2_km0tk")
 timer = NodePath("ShootingCoolDown")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D1" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_7nyc4")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.900815, 0)
 mesh = ExtResource("2_emesw")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39118, 0)
 mesh = ExtResource("3_fgwst")
 
-[node name="aim" type="Marker3D" parent="MeshInstance3D4"]
+[node name="aim" type="Marker3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376871, 0.356979)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
