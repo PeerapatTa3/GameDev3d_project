@@ -55,7 +55,7 @@ offset_right = 701.0
 offset_bottom = 234.0
 scale = Vector2(2, 2)
 mouse_default_cursor_shape = 2
-min_value = -80.0
+min_value = -30.0
 max_value = 0.0
 metadata/_edit_use_anchors_ = true
 
@@ -82,10 +82,10 @@ mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="CanvasLayer"]
-offset_left = 499.0
-offset_top = 426.0
-offset_right = 702.0
-offset_bottom = 507.0
+offset_left = 498.0
+offset_top = 382.0
+offset_right = 701.0
+offset_bottom = 463.0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 text = "Back"

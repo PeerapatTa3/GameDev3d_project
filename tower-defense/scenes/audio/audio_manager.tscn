@@ -11,6 +11,7 @@ script = ExtResource("1_iognr")
 
 [node name="Bg_main" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_2ccwd")
+volume_db = -10.532
 bus = &"Music"
 
 [node name="Bg_win" type="AudioStreamPlayer" parent="."]

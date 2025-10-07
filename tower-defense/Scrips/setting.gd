@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 @export var Bus_name : String
 var Bus_id
 @onready var audio_music_control = $Audio_music_control
