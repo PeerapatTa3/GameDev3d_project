@@ -16,7 +16,9 @@ radius = 9.9571
 collision_layer = 2
 script = ExtResource("1_5s4m5")
 tower_name = "Turret"
+max_upgrade_level = 10
 attack_range = NodePath("MobDetector")
+upgrade_speed_bonus = 0.05
 tower_pic = ExtResource("2_km0tk")
 timer = NodePath("ShootingCoolDown")
 
