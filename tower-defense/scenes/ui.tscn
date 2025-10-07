@@ -275,12 +275,14 @@ text = "HP :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="Hp_bar" type="ProgressBar" parent="CanvasLayer"]
 offset_left = 252.0
 offset_top = 609.0
 offset_right = 918.0
 offset_bottom = 636.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_p7vwb")
+max_value = 10.0
+step = 1.0
 
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton2" to="." method="_on_texture_button_2_pressed"]
