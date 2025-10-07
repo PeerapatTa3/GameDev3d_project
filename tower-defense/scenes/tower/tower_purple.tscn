@@ -14,6 +14,7 @@ size = Vector3(0.938187, 2.17408, 0.99942)
 radius = 9.9571
 
 [node name="TowerPurple" type="StaticBody3D" node_paths=PackedStringArray("attack_range", "timer")]
+collision_layer = 2
 script = ExtResource("1_qbpvd")
 tower_name = "Tower_Purple"
 attack_range = NodePath("MobDetector")

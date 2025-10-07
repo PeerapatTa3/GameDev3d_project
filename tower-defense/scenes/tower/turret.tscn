@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvkhbd3qhomsb"]
+[gd_scene load_steps=7 format=3 uid="uid://cvkhbd3qhomsb"]
 
 [ext_resource type="Script" uid="uid://b4h3xnic1g8s1" path="res://Scrips/tower.gd" id="1_el7wl"]
 [ext_resource type="ArrayMesh" uid="uid://c2aeqtjt8dw2h" path="res://assets/models/kenny/Models/OBJ format/weapon-turret.obj" id="2_485p4"]
+[ext_resource type="PackedScene" uid="uid://cyuqams3fjxwy" path="res://scenes/bullet/yellow_bullet.tscn" id="2_aqda2"]
 [ext_resource type="Texture2D" uid="uid://csj5lt13c5hls" path="res://assets/Images/t2.png" id="2_dxtby"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pp6j5"]
@@ -11,9 +12,13 @@ size = Vector3(0.658508, 0.528809, 0.558594)
 radius = 3.5
 
 [node name="turret" type="StaticBody3D" node_paths=PackedStringArray("attack_range", "timer")]
+collision_layer = 2
 script = ExtResource("1_el7wl")
 tower_name = "Turret"
+bullet = ExtResource("2_aqda2")
+bullet_damage = 2
 attack_range = NodePath("MobDetector")
+attack_speed = 0.4
 tower_pic = ExtResource("2_dxtby")
 timer = NodePath("ShootingCoolDown")
 

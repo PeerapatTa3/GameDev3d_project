@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Enemy
 
 @export var speed : int = 2
 @export var hp : int = 15
@@ -17,6 +18,7 @@ func take_damage(damage : int) -> void:
 	hp -= damage
 	
 	if hp <= 0:
-		GameStatus.kill += kill_point
+		GameStatus.kills += kill_point
 		GameStatus.coin += coin_on_kill
+		GameStatus.enemies_remaining -= 1
 		queue_free()

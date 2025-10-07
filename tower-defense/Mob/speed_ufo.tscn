@@ -1,21 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://p1q0k34uvvjd"]
+[gd_scene load_steps=2 format=3 uid="uid://p1q0k34uvvjd"]
 
-[ext_resource type="Script" uid="uid://dvmwu5bejwcbr" path="res://Scrips/enemy.gd" id="1_1m4qq"]
-[ext_resource type="ArrayMesh" uid="uid://cvcilp46b5rn8" path="res://assets/models/kenny/Models/OBJ format/enemy-ufo-b.obj" id="2_1m4qq"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_jox75"]
-height = 0.669189
+[ext_resource type="PackedScene" uid="uid://bfpmb1oitwaak" path="res://Mob/speed_enemy.tscn" id="1_dkh01"]
 
 [node name="speed_ufo" type="PathFollow3D"]
 
-[node name="Enemy" type="CharacterBody3D" parent="." groups=["Enemy"]]
-script = ExtResource("1_1m4qq")
-speed = 3
-hp = 20
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy"]
-mesh = ExtResource("2_1m4qq")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3302, 0)
-shape = SubResource("CylinderShape3D_jox75")
+[node name="Enemy" parent="." instance=ExtResource("1_dkh01")]
