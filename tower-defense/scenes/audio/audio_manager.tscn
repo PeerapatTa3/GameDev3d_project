@@ -24,4 +24,5 @@ bus = &"Music"
 
 [node name="Bg_gameover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_cfl81")
+volume_db = -10.093
 bus = &"Music"
