@@ -47,7 +47,7 @@ func _ready() -> void:
 # ==============================
 func _process(_delta):
 	game_manager()
-	if GameStatus.hp == 0:
+	if GameStatus.hp <= 0:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func game_manager() -> void:

@@ -30,6 +30,7 @@ func _input_tower_stat():
 		$CanvasLayer/Panel/towerImg.texture = upgrade_traget.tower_pic
 	$CanvasLayer/VBoxContainer/Speed/Old_Speed.text = str(upgrade_traget.attack_speed)
 	$CanvasLayer/VBoxContainer/Speed/New_Speed.text = str(upgrade_traget.attack_speed - upgrade_traget.upgrade_speed_bonus)
+	$CanvasLayer/Panel/Cost.text = "cost : " + str(upgrade_traget.upgrade_cost)
 	
 	if upgrade_traget.upgrade_level >= upgrade_traget.max_upgrade_level:
 		$CanvasLayer/VBoxContainer/Level/arrow3.hide()
@@ -40,6 +41,7 @@ func _input_tower_stat():
 		$CanvasLayer/VBoxContainer/Range/New_Range.hide()
 		$CanvasLayer/VBoxContainer/Speed/arrow3.hide()
 		$CanvasLayer/VBoxContainer/Speed/New_Speed.hide()
+		$CanvasLayer/Panel/Cost.hide()
 	else :
 		$CanvasLayer/VBoxContainer/Level/arrow3.show()
 		$CanvasLayer/VBoxContainer/Level/New_Level.show()

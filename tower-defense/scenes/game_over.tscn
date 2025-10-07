@@ -26,30 +26,50 @@ texture = ExtResource("1_xeevv")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Mainmenu" type="Button" parent="."]
-layout_mode = 0
-anchor_left = 0.369792
-anchor_top = 0.722222
-anchor_right = 0.632546
-anchor_bottom = 0.880604
-offset_right = -83.693
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mainmenu" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333333
+anchor_top = 0.719136
+anchor_right = 0.660877
+anchor_bottom = 0.877518
+offset_right = -104.33
 offset_bottom = -27.6315
 scale = Vector2(1.38216, 1.36842)
 theme_override_font_sizes/font_size = 33
 text = "Main menu"
 metadata/_edit_use_anchors_ = true
 
-[node name="Gameover" type="Label" parent="."]
-layout_mode = 0
-anchor_left = 0.117188
-anchor_top = 0.220679
-anchor_right = 0.877604
-anchor_bottom = 0.537037
-offset_bottom = -38.0
+[node name="Gameover" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0451389
+anchor_top = 0.216049
+anchor_right = 1.0191
+anchor_bottom = 0.49537
 theme_override_font_sizes/font_size = 150
 text = "GameOver"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Mainmenu" to="." method="_on_mainmenu_pressed"]
+[node name="Wave" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213542
+anchor_top = 0.533951
+anchor_right = 1.10851
+anchor_bottom = 0.645062
+theme_override_font_sizes/font_size = 48
+text = "You survived for A waves!!"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureRect/Mainmenu" to="." method="_on_mainmenu_pressed"]

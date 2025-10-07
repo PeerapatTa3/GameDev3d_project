@@ -8,7 +8,6 @@ height = 0.669189
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 script = ExtResource("1_sp8q6")
-speed = 3
 hp = 20
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
