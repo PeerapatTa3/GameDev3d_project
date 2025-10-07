@@ -36,8 +36,13 @@ mesh = ExtResource("3_ld1v7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67224, 0)
 mesh = ExtResource("4_r3u42")
 
+<<<<<<< Updated upstream
 [node name="aim" type="Marker3D" parent="MeshInstance3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376871, 0.356979)
+=======
+[node name="aim" type="Marker3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431815, 0.0572678)
+>>>>>>> Stashed changes
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0232619, 1.08264, 0.00221255)

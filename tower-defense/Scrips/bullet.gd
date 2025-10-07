@@ -5,6 +5,7 @@ var target : CharacterBody3D
 @export var speed : int = 20
 var bullet_damage : int 
 @export var area : Area3D
+@export var mesh : MeshInstance3D
 
 func _ready() -> void:
 	if area:
@@ -15,7 +16,10 @@ func _physics_process(delta):
 		var dir = global_position.direction_to(target.global_position)
 		velocity = dir * speed
 		look_at(target.global_position)
-		rotate_y(deg_to_rad(180))
+		if mesh:
+			mesh.rotate_y(deg_to_rad(180))
+		else:
+			rotate_y(deg_to_rad(180))
 		
 		move_and_slide()
 	else:
