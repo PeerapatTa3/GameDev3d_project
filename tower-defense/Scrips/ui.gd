@@ -13,7 +13,7 @@ func _ready():
 		print("UI emitted tower:", scene, "cost:", cost))
 
 func _on_texture_button_pressed() -> void:
-		tower_selected.emit(preload("res://scenes/cannon.tscn"), 50)
+		tower_selected.emit(preload("res://scenes/tower/cannon.tscn"), 50)
 
 func _process(delta: float) -> void:
 	coin.text = str(GameStatus.coin)
@@ -23,4 +23,4 @@ func _on_coin_pressed() -> void:
 
 
 func _on_texture_button_2_pressed() -> void:
-	tower_selected.emit(preload("res://scenes/turret.tscn"), 100)
+	tower_selected.emit(preload("res://scenes/tower/turret.tscn"), 100)

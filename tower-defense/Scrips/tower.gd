@@ -2,7 +2,7 @@ extends StaticBody3D
 class_name Tower
 
 @export var tower_name : String
-@export var bullet: PackedScene = preload("res://scenes/bullet.tscn")
+@export var bullet: PackedScene = preload("res://scenes/bullet/bullet.tscn")
 @export var bullet_damage: int = 5
 @export var upgrade_cost: int = 50
 @export var upgrade_damage_bonus: int = 5
