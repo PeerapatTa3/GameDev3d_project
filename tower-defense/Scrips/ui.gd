@@ -25,3 +25,9 @@ func _on_coin_pressed() -> void:
 
 func _on_texture_button_2_pressed() -> void:
 	tower_selected.emit(preload("res://scenes/tower/turret.tscn"), 100)
+
+
+func _on_setting_pressed() -> void:
+	var current_scene = get_tree().current_scene
+	get_tree().set_meta("previous_scene_path", current_scene.scene_file_path)
+	get_tree().change_scene_to_file("res://scenes/setting.tscn")

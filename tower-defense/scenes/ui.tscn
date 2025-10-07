@@ -26,6 +26,7 @@ anchor_left = 9.825
 anchor_top = 13.45
 anchor_right = 11.4
 anchor_bottom = 14.975
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_p7vwb")
 ignore_texture_size = true
 stretch_mode = 0
@@ -55,6 +56,7 @@ anchor_left = 11.75
 anchor_top = 13.475
 anchor_right = 13.325
 anchor_bottom = 15.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_ktti3")
 ignore_texture_size = true
 stretch_mode = 0
@@ -84,6 +86,7 @@ anchor_left = 13.625
 anchor_top = 13.5
 anchor_right = 15.2
 anchor_bottom = 15.025
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_cgfq5")
 ignore_texture_size = true
 stretch_mode = 0
@@ -113,6 +116,7 @@ anchor_left = 15.5
 anchor_top = 13.5
 anchor_right = 17.075
 anchor_bottom = 15.025
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_7dvkv")
 ignore_texture_size = true
 stretch_mode = 0
@@ -141,13 +145,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Buttons2"]
+[node name="setting" type="TextureButton" parent="CanvasLayer/Buttons2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 27.025
 anchor_top = 0.125
 anchor_right = 28.6
 anchor_bottom = 1.65
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_p7vwb")
 ignore_texture_size = true
 stretch_mode = 0
@@ -232,4 +237,5 @@ stretch_mode = 0
 
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons2/setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="CanvasLayer/Coin" to="." method="_on_coin_pressed"]

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbxmhmfgrmp4k"]
+[gd_scene load_steps=5 format=3 uid="uid://cbxmhmfgrmp4k"]
 
+[ext_resource type="Script" uid="uid://barpe77rh4bog" path="res://Scrips/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://bn2yl8obiktaf" path="res://assets/Images/menu3.jpg" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://nhn7iebi25v" path="res://scenes/test.tscn" id="2_wu84c"]
+[ext_resource type="PackedScene" uid="uid://kfwgww1iirw4" path="res://scenes/setting.tscn" id="3_8ln24"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -9,6 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ekxnf")
+scene = ExtResource("2_wu84c")
+scene2 = ExtResource("3_8ln24")
 
 [node name="bg" type="TextureRect" parent="."]
 modulate = Color(0.625597, 0.625597, 0.625597, 1)
@@ -27,6 +33,7 @@ offset_top = 288.0
 offset_right = 899.0
 offset_bottom = 363.0
 scale = Vector2(1.38216, 1.36842)
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 33
 text = "Play"
 
@@ -37,6 +44,7 @@ offset_top = 409.0
 offset_right = 897.0
 offset_bottom = 484.0
 scale = Vector2(1.38216, 1.36842)
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 33
 text = "setting"
 
@@ -50,3 +58,6 @@ theme_override_font_sizes/font_size = 100
 text = "Sox Kee mah SS2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]

@@ -7,4 +7,4 @@ func _ready():
 		print("UI emitted tower:", scene, "cost:", cost))
 
 func _on_texture_button_pressed() -> void:
-		tower_selected.emit(preload("res://scenes/test_tower.tscn"), 50)
+		tower_selected.emit(preload("res://scenes/tower/test_tower.tscn"), 50)
