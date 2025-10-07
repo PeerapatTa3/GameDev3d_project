@@ -31,3 +31,11 @@ func _on_setting_pressed() -> void:
 	var current_scene = get_tree().current_scene
 	get_tree().set_meta("previous_scene_path", current_scene.scene_file_path)
 	get_tree().change_scene_to_file("res://scenes/setting.tscn")
+
+
+func _on_texture_button_3_pressed() -> void:
+	tower_selected.emit(preload("res://scenes/tower/tower_purple.tscn"), 150)
+
+
+func _on_texture_button_4_pressed() -> void:
+	tower_selected.emit(preload("res://scenes/tower/turretpurple.tscn"), 150)
