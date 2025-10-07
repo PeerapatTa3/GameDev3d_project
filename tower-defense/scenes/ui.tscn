@@ -19,11 +19,11 @@ script = ExtResource("1_x4jx1")
 
 [node name="Buttons" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 5.0
-offset_top = -42.0
-offset_right = 45.0
-offset_bottom = -2.0
+anchor_left = 0.00434028
+anchor_top = -0.0648148
+anchor_right = 0.0390625
+anchor_bottom = -0.00308642
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/Buttons"]
 layout_mode = 1
@@ -54,6 +54,7 @@ theme_override_font_sizes/font_size = 25
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Buttons"]
 layout_mode = 1
@@ -84,6 +85,7 @@ theme_override_font_sizes/font_size = 25
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Buttons"]
 layout_mode = 1
@@ -114,6 +116,7 @@ theme_override_font_sizes/font_size = 25
 text = "150"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton4" type="TextureButton" parent="CanvasLayer/Buttons"]
 layout_mode = 1
@@ -144,12 +147,13 @@ theme_override_font_sizes/font_size = 25
 text = "150"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Buttons2" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 0.0347222
+anchor_bottom = 0.0617284
+metadata/_edit_use_anchors_ = true
 
 [node name="setting" type="TextureButton" parent="CanvasLayer/Buttons2"]
 layout_mode = 1
@@ -166,9 +170,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Buttons3" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 0.0347222
+anchor_bottom = 0.0617284
+metadata/_edit_use_anchors_ = true
 
 [node name="MainMenu" type="TextureButton" parent="CanvasLayer/Buttons3"]
 layout_mode = 1
@@ -184,105 +188,114 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="wave" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -44.0
-offset_right = 44.0
-offset_bottom = 34.0
+anchors_preset = -1
+anchor_left = 0.456597
+anchor_right = 0.543403
+anchor_bottom = 0.0648148
+offset_left = 6.0
+offset_right = -6.0
+offset_bottom = -8.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "wave 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Enemy" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -55.0
-offset_top = 46.0
-offset_right = 45.0
-offset_bottom = 88.0
+anchors_preset = -1
+anchor_left = 0.43533
+anchor_top = 0.0709877
+anchor_right = 0.55599
+anchor_bottom = 0.135802
+offset_left = 19.5
+offset_right = -19.5
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Enemy : 3"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Kill" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -565.0
-offset_top = 3.0
-offset_right = -426.0
-offset_bottom = 45.0
+anchors_preset = -1
+anchor_left = 0.00954861
+anchor_top = 0.00462963
+anchor_right = 0.130208
+anchor_bottom = 0.0694444
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Kill : 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="coin" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -131.0
-offset_top = 446.0
-offset_right = -43.0
-offset_bottom = 488.0
+anchors_preset = -1
+anchor_left = 0.386285
+anchor_top = 0.688272
+anchor_right = 0.462674
+anchor_bottom = 0.753086
+offset_bottom = -3.05176e-05
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.992157, 0.8, 0.372549, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "100"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="coin_img" type="TextureRect" parent="CanvasLayer"]
 visible = false
-offset_left = 401.0
-offset_top = 496.0
-offset_right = 441.0
-offset_bottom = 536.0
+anchors_preset = -1
+anchor_left = 0.34809
+anchor_top = 0.765432
+anchor_right = 0.382813
+anchor_bottom = 0.82716
 texture = ExtResource("4_wm3ai")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Coin" type="TextureButton" parent="CanvasLayer"]
-offset_left = 405.0
-offset_top = 450.0
-offset_right = 439.0
-offset_bottom = 484.0
+anchors_preset = -1
+anchor_left = 0.351563
+anchor_top = 0.694444
+anchor_right = 0.381076
+anchor_bottom = 0.746914
+offset_top = 3.05176e-05
+offset_bottom = 3.05176e-05
 texture_normal = ExtResource("4_wm3ai")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="HP" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -399.0
-offset_top = 598.0
-offset_right = -311.0
-offset_bottom = 640.0
+anchors_preset = -1
+anchor_left = 0.153646
+anchor_top = 0.92284
+anchor_right = 0.230035
+anchor_bottom = 0.987654
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "HP :"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Hp_bar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 252.0
-offset_top = 609.0
-offset_right = 918.0
-offset_bottom = 636.0
+anchors_preset = -1
+anchor_left = 0.21875
+anchor_top = 0.939815
+anchor_right = 0.796875
+anchor_bottom = 0.981481
 theme_override_styles/fill = SubResource("StyleBoxFlat_p7vwb")
 max_value = 10.0
 step = 1.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/TextureButton2" to="." method="_on_texture_button_2_pressed"]

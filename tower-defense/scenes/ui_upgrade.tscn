@@ -45,10 +45,12 @@ script = ExtResource("1_4crww")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = 719.0
-offset_right = 1151.0
-offset_bottom = 644.0
+anchors_preset = -1
+anchor_left = 0.624132
+anchor_right = 0.999132
+anchor_bottom = 0.993827
 theme_override_styles/panel = SubResource("StyleBoxFlat_4crww")
+metadata/_edit_use_anchors_ = true
 
 [node name="towerImg" type="TextureRect" parent="CanvasLayer/Panel"]
 layout_mode = 0

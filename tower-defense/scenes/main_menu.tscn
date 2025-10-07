@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_ekxnf")
 scene = ExtResource("2_wu84c")
 scene2 = ExtResource("3_8ln24")
+metadata/_edit_use_anchors_ = true
 
 [node name="bg" type="TextureRect" parent="."]
 modulate = Color(0.625597, 0.625597, 0.625597, 1)
@@ -25,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_l6cm7")
+metadata/_edit_use_anchors_ = true
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
@@ -36,6 +38,7 @@ scale = Vector2(1.38216, 1.36842)
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 33
 text = "Play"
+metadata/_edit_use_anchors_ = true
 
 [node name="setting" type="Button" parent="."]
 layout_mode = 0
@@ -47,6 +50,7 @@ scale = Vector2(1.38216, 1.36842)
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 33
 text = "setting"
+metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="Label" parent="."]
 layout_mode = 0
@@ -58,6 +62,7 @@ theme_override_font_sizes/font_size = 100
 text = "Sox Kee mah SS2"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]
