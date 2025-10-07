@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://nhn7iebi25v"]
+[gd_scene load_steps=13 format=3 uid="uid://nhn7iebi25v"]
 
 [ext_resource type="Script" uid="uid://dk5qakt24es0e" path="res://Scrips/test.gd" id="1_j5jx5"]
 [ext_resource type="Texture2D" uid="uid://cg6mh8os3omuv" path="res://assets/sky/sky1.exr" id="2_at5dv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://Map/snown_map.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://dlnnp8xhhsnxm" path="res://scenes/ui.tscn" id="4_74lek"]
 [ext_resource type="PackedScene" uid="uid://ddmkfnmhl3283" path="res://scenes/ui_upgrade.tscn" id="6_lpvoh"]
+[ext_resource type="PackedScene" uid="uid://dibdnwesi6at2" path="res://scenes/base.tscn" id="8_jcd4p"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jcd4p"]
 panorama = ExtResource("2_at5dv")
@@ -56,5 +57,8 @@ curve = SubResource("Curve3D_lpvoh")
 [node name="SpawnTimer" type="Timer" parent="."]
 
 [node name="UI_Upgrade" parent="." instance=ExtResource("6_lpvoh")]
+
+[node name="Base" parent="." instance=ExtResource("8_jcd4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5181, 0.705832, -1.51846)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
