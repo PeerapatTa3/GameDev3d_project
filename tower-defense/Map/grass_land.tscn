@@ -1,0 +1,153 @@
+[gd_scene load_steps=15 format=3 uid="uid://gljkeowoekv1"]
+
+[ext_resource type="Script" uid="uid://dk5qakt24es0e" path="res://Scrips/test.gd" id="1_e3cjg"]
+[ext_resource type="PackedScene" uid="uid://cq8ewahj1hg0h" path="res://Map/map_2.tscn" id="2_u7fax"]
+[ext_resource type="Texture2D" uid="uid://cg6mh8os3omuv" path="res://assets/sky/sky1.exr" id="3_e3cjg"]
+[ext_resource type="PackedScene" uid="uid://bss0f6qvwlqht" path="res://scenes/camera.tscn" id="4_ct5lk"]
+[ext_resource type="PackedScene" uid="uid://dlnnp8xhhsnxm" path="res://scenes/ui.tscn" id="5_wtgxx"]
+[ext_resource type="PackedScene" uid="uid://ddmkfnmhl3283" path="res://scenes/ui_upgrade.tscn" id="6_mju84"]
+[ext_resource type="PackedScene" uid="uid://dvse34o2skbh4" path="res://scenes/mouse_handler.tscn" id="7_ct5lk"]
+[ext_resource type="PackedScene" uid="uid://dibdnwesi6at2" path="res://scenes/base.tscn" id="8_wtgxx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7pxag"]
+panorama = ExtResource("3_e3cjg")
+
+[sub_resource type="Sky" id="Sky_uacia"]
+sky_material = SubResource("PanoramaSkyMaterial_7pxag")
+
+[sub_resource type="Environment" id="Environment_dp4q4"]
+background_mode = 2
+sky = SubResource("Sky_uacia")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Curve3D" id="Curve3D_e3cjg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.38843, -0.0107441, -13.6276, 0, 0, 0, 0, 0, 0, -1.43724, -0.00984335, -12.4937, 0, 0, 0, 0, 0, 0, -4.49268, -0.0154052, -12.5083, 0, 0, 0, 0, 0, 0, -4.39095, -0.0153401, -9.57383, 0, 0, 0, 0, 0, 0, 2.34149, -0.0179086, -9.60659, 0, 0, 0, 0, 0, 0, 2.32693, -0.00996256, -4.51475, 0, 0, 0, 0, 0, 0, -1.39889, -0.0103927, -4.57569, 0, 0, 0, 0, 0, 0, -1.40869, -0.0116167, 0.464661, 0, 0, 0, 0, 0, 0, 3.44499, 0.0133865, 0.530321, 0, 0, 0, 0, 0, 0, 3.2999, 0.00867224, 6.45164, 0, 0, 0, 0, 0, 0, -5.37716, -0.0515387, 6.35961, 0, 0, 0, 0, 0, 0, -5.37899, 0.024534, 11.4694, 0, 0, 0, 0, 0, 0, 5.50179, -0.268514, 11.8027, 0, 0, 0, 0, 0, 0, 5.51042, -0.291851, 13.5063, 0, 0, 0, 0, 0, 0, -0.174021, -0.294297, 13.6653, 0, 0, 0, 0, 0, 0, -0.317327, -0.0802636, 17.5308),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 16
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ct5lk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtgxx"]
+
+[node name="GrassLand" type="Node3D" node_paths=PackedStringArray("spawn_timer", "placement_ui", "placement_manager")]
+script = ExtResource("1_e3cjg")
+spawn_timer = NodePath("Timer")
+placement_ui = NodePath("UI")
+placement_manager = NodePath("MouseHandler")
+
+[node name="Map2" parent="." instance=ExtResource("2_u7fax")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dp4q4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 7, 0)
+shadow_enabled = true
+
+[node name="Camera" parent="." instance=ExtResource("4_ct5lk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92361, 2.07499)
+max_zoom = 30.0
+
+[node name="UI" parent="." instance=ExtResource("5_wtgxx")]
+
+[node name="UI_Upgrade" parent="." instance=ExtResource("6_mju84")]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="MouseHandler" parent="." node_paths=PackedStringArray("grid_map", "upgrade_ui") instance=ExtResource("7_ct5lk")]
+grid_map = NodePath("../Map2")
+upgrade_ui = NodePath("../UI_Upgrade")
+
+[node name="Path" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+curve = SubResource("Curve3D_e3cjg")
+
+[node name="Base" parent="." instance=ExtResource("8_wtgxx")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.530193, 0.155026, 17.4324)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.743066, 0)
+visible = false
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37831, -0.625449, 0.392884)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37831, -0.625449, -4.49512)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40942, -0.625449, -4.45894)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40942, -0.625449, -9.4129)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44442, -0.625449, -9.53904)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44442, -0.625449, -12.5112)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53533, -0.625449, -12.5138)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40728, -0.618708, -13.5083)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.28395, -0.625449, 0.392884)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.28395, -0.625449, 6.42597)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45733, -0.625449, 6.42597)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D12" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45733, -0.625449, 11.569)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D13" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4705, -0.625449, 11.569)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D14" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4705, -0.625449, 13.544)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D15" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.415302, -0.625449, 13.544)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")
+
+[node name="CSGMesh3D16" type="CSGMesh3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.547658, -0.625449, 17.2732)
+mesh = SubResource("CylinderMesh_ct5lk")
+material = SubResource("StandardMaterial3D_wtgxx")

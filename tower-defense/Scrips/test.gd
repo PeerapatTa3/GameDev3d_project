@@ -15,6 +15,7 @@ class_name Spawn_Point
 @export var hp_increase_per_wave : float = 1.2
 @export var wave_delay : float = 5.0
 @export var spawn_delay : float = 0.5
+@export var spawn_timer : Timer
 
 var can_spawn : bool = true
 var enemy_spawned_this_wave : int = 0
@@ -33,6 +34,8 @@ var current_wave_pattern : Array = []
 func _ready() -> void:
 	if placement_ui and placement_ui.has_signal("tower_selected"):
 		placement_ui.tower_selected.connect(placement_manager.select_tower)
+	if spawn_timer:
+		spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	
 	GameStatus.wave = 1
 	GameStatus.kills = 0
@@ -66,7 +69,7 @@ func start_wave():
 	
 	wave_in_progress = true
 	can_spawn = true
-	$SpawnTimer.start()
+	spawn_timer.start()
 
 func start_next_wave():
 	GameStatus.wave += 1
@@ -102,7 +105,7 @@ func _on_spawn_timer_timeout() -> void:
 	if enemy_spawned_this_wave < current_wave_pattern.size():
 		spawn_enemy(current_wave_pattern[enemy_spawned_this_wave])
 	else:
-		$SpawnTimer.stop()
+		spawn_timer.stop()
 
 func spawn_enemy(enemy_type : String):
 	if not can_spawn:

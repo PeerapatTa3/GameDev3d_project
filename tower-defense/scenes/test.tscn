@@ -12,12 +12,12 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jcd4p"]
 panorama = ExtResource("2_at5dv")
 
-[sub_resource type="Sky" id="Sky_uacia"]
+[sub_resource type="Sky" id="Sky_jcd4p"]
 sky_material = SubResource("PanoramaSkyMaterial_jcd4p")
 
 [sub_resource type="Environment" id="Environment_yk7ts"]
 background_mode = 2
-sky = SubResource("Sky_uacia")
+sky = SubResource("Sky_jcd4p")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -28,8 +28,9 @@ _data = {
 }
 point_count = 10
 
-[node name="Test" type="Node3D" node_paths=PackedStringArray("placement_ui", "placement_manager")]
+[node name="Test" type="Node3D" node_paths=PackedStringArray("spawn_timer", "placement_ui", "placement_manager")]
 script = ExtResource("1_j5jx5")
+spawn_timer = NodePath("SpawnTimer")
 placement_ui = NodePath("UI")
 placement_manager = NodePath("MouseHandler")
 
@@ -60,5 +61,3 @@ curve = SubResource("Curve3D_lpvoh")
 
 [node name="Base" parent="." instance=ExtResource("8_jcd4p")]
 transform = Transform3D(-5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 10.5181, 0.171918, -1.51846)
-
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
