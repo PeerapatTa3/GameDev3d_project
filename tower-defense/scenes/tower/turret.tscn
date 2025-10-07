@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvkhbd3qhomsb"]
+[gd_scene load_steps=6 format=3 uid="uid://cvkhbd3qhomsb"]
 
 [ext_resource type="Script" uid="uid://b4h3xnic1g8s1" path="res://Scrips/tower.gd" id="1_el7wl"]
 [ext_resource type="ArrayMesh" uid="uid://c2aeqtjt8dw2h" path="res://assets/models/kenny/Models/OBJ format/weapon-turret.obj" id="2_485p4"]
+[ext_resource type="Texture2D" uid="uid://csj5lt13c5hls" path="res://assets/Images/t2.png" id="2_dxtby"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pp6j5"]
 size = Vector3(0.658508, 0.528809, 0.558594)
@@ -9,8 +10,12 @@ size = Vector3(0.658508, 0.528809, 0.558594)
 [sub_resource type="SphereShape3D" id="SphereShape3D_6fjxm"]
 radius = 3.5
 
-[node name="turret" type="StaticBody3D"]
+[node name="turret" type="StaticBody3D" node_paths=PackedStringArray("attack_range", "timer")]
 script = ExtResource("1_el7wl")
+tower_name = "Turret"
+attack_range = NodePath("MobDetector")
+tower_pic = ExtResource("2_dxtby")
+timer = NodePath("ShootingCoolDown")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_485p4")

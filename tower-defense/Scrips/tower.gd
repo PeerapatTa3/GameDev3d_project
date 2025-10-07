@@ -13,6 +13,10 @@ class_name Tower
 @export var max_upgrade_level: int = 3
 @export var attack_range: Area3D
 @export var upgrade_range_bonus : float = 0.2
+@export var attack_speed : float = 1
+@export var upgrade_speed_bonus : float = 0.1
+@export var tower_pic : Texture
+@export var timer : Timer
 var placed_cell : Vector3i
 
 # ==============================
@@ -42,6 +46,10 @@ func _ready() -> void:
 	add_to_group("Tower")
 	_setup_sphere_attack()
 	_create_debug_mesh()
+	attack_range.body_entered.connect(_on_mob_detector_body_entered)
+	attack_range.body_exited.connect(_on_mob_detector_body_exited)
+	timer.timeout.connect(_on_shooting_cool_down_timeout)
+	timer.wait_time = attack_speed
 	if debug_draw:
 		_update_debug_mesh()
 
@@ -186,6 +194,8 @@ func _on_tower_clicked():
 	GameStatus.coin -= upgrade_cost
 	upgrade_level += 1
 	bullet_damage += upgrade_damage_bonus
+	attack_speed -= upgrade_speed_bonus
+	timer.wait_time = attack_speed
 	
 	if attack_shape:
 		attack_shape.radius += upgrade_range_bonus

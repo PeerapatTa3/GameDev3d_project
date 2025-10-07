@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhosm0o71tgoh"]
+[gd_scene load_steps=8 format=3 uid="uid://bhosm0o71tgoh"]
 
 [ext_resource type="Script" uid="uid://b1jr4cb0e34iu" path="res://scenes/tower/cannon.gd" id="1_5s4m5"]
 [ext_resource type="ArrayMesh" uid="uid://c3smmkyl66pcm" path="res://assets/models/kenny/Models/OBJ format/tower-square-build-c.obj" id="1_7nyc4"]
 [ext_resource type="ArrayMesh" uid="uid://d0d5gxj2v1q71" path="res://assets/models/kenny/Models/OBJ format/tower-square-middle-b.obj" id="2_emesw"]
+[ext_resource type="Texture2D" uid="uid://dhx233j2sq10p" path="res://assets/Images/t4.png" id="2_km0tk"]
 [ext_resource type="ArrayMesh" uid="uid://bpwsma6cc4m3e" path="res://assets/models/kenny/Models/OBJ format/tower-round-middle-b.obj" id="3_fgwst"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nx7hh"]
@@ -11,10 +12,12 @@ size = Vector3(0.938187, 2.17408, 0.99942)
 [sub_resource type="SphereShape3D" id="SphereShape3D_37sl1"]
 radius = 9.9571
 
-[node name="StaticBody3D" type="StaticBody3D" node_paths=PackedStringArray("attack_range")]
+[node name="StaticBody3D" type="StaticBody3D" node_paths=PackedStringArray("attack_range", "timer")]
 script = ExtResource("1_5s4m5")
 tower_name = "Turret"
 attack_range = NodePath("MobDetector")
+tower_pic = ExtResource("2_km0tk")
+timer = NodePath("ShootingCoolDown")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_7nyc4")

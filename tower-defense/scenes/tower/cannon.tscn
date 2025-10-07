@@ -9,10 +9,11 @@ size = Vector3(0.658508, 0.528809, 0.558594)
 [sub_resource type="SphereShape3D" id="SphereShape3D_pxhkx"]
 radius = 3.5
 
-[node name="Cannon" type="StaticBody3D" node_paths=PackedStringArray("attack_range")]
+[node name="Cannon" type="StaticBody3D" node_paths=PackedStringArray("attack_range", "timer")]
 script = ExtResource("1_n3e8h")
 tower_name = "Cannon"
 attack_range = NodePath("MobDetector")
+timer = NodePath("ShootingCoolDown")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_m3luo")
@@ -32,7 +33,3 @@ shape = SubResource("SphereShape3D_pxhkx")
 [node name="bulletContainner" type="Node" parent="."]
 
 [node name="ShootingCoolDown" type="Timer" parent="."]
-
-[connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
-[connection signal="body_exited" from="MobDetector" to="." method="_on_mob_detector_body_exited"]
-[connection signal="timeout" from="ShootingCoolDown" to="." method="_on_shooting_cool_down_timeout"]

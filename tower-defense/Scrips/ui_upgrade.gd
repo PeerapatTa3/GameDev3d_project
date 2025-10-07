@@ -22,9 +22,14 @@ func _input_tower_stat():
 	$CanvasLayer/VBoxContainer/Level/New_Level.text = str(upgrade_traget.upgrade_level + 1)
 	$CanvasLayer/VBoxContainer/Damage/Old_damage.text = str(upgrade_traget.bullet_damage)
 	$CanvasLayer/VBoxContainer/Damage/New_damage.text = str(upgrade_traget.bullet_damage + upgrade_traget.upgrade_damage_bonus)
-	$CanvasLayer/VBoxContainer/Range/Old_Range.text = "%.1f" % [upgrade_traget.attack_shape.radius]
-	$CanvasLayer/VBoxContainer/Range/New_Range.text = "%.1f" % [upgrade_traget.attack_shape.radius + upgrade_traget.upgrade_range_bonus]
+	if upgrade_traget.attack_shape:
+		$CanvasLayer/VBoxContainer/Range/Old_Range.text = "%.1f" % [upgrade_traget.attack_shape.radius]
+		$CanvasLayer/VBoxContainer/Range/New_Range.text = "%.1f" % [upgrade_traget.attack_shape.radius + upgrade_traget.upgrade_range_bonus]
 	$CanvasLayer/Panel/Piority.selected = upgrade_traget.target_priority
+	if upgrade_traget.tower_pic:
+		$CanvasLayer/Panel/towerImg.texture = upgrade_traget.tower_pic
+	$CanvasLayer/VBoxContainer/Speed/Old_Speed.text = str(upgrade_traget.attack_speed)
+	$CanvasLayer/VBoxContainer/Speed/New_Speed.text = str(upgrade_traget.attack_speed - upgrade_traget.upgrade_speed_bonus)
 	
 	if upgrade_traget.upgrade_level >= upgrade_traget.max_upgrade_level:
 		$CanvasLayer/VBoxContainer/Level/arrow3.hide()
@@ -33,6 +38,8 @@ func _input_tower_stat():
 		$CanvasLayer/VBoxContainer/Damage/New_damage.hide()
 		$CanvasLayer/VBoxContainer/Range/arrow2.hide()
 		$CanvasLayer/VBoxContainer/Range/New_Range.hide()
+		$CanvasLayer/VBoxContainer/Speed/arrow3.hide()
+		$CanvasLayer/VBoxContainer/Speed/New_Speed.hide()
 	else :
 		$CanvasLayer/VBoxContainer/Level/arrow3.show()
 		$CanvasLayer/VBoxContainer/Level/New_Level.show()
@@ -40,6 +47,8 @@ func _input_tower_stat():
 		$CanvasLayer/VBoxContainer/Damage/New_damage.show()
 		$CanvasLayer/VBoxContainer/Range/arrow2.show()
 		$CanvasLayer/VBoxContainer/Range/New_Range.show()
+		$CanvasLayer/VBoxContainer/Speed/arrow3.show()
+		$CanvasLayer/VBoxContainer/Speed/New_Speed.show()
 	
 
 func _close_upgrade_menu()->void:

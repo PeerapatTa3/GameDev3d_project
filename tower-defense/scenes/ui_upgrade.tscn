@@ -100,10 +100,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -77.0
-offset_top = 15.0
-offset_right = 79.0
-offset_bottom = 49.0
+offset_left = -65.0
+offset_top = 228.0
+offset_right = 91.0
+offset_bottom = 262.0
 grow_horizontal = 2
 text = "Canon"
 horizontal_alignment = 1
@@ -147,10 +147,10 @@ popup/item_3/text = "CLOSEST"
 popup/item_3/id = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 852.0
-offset_top = 292.0
-offset_right = 1030.0
-offset_bottom = 419.0
+offset_left = 851.0
+offset_top = 262.0
+offset_right = 1029.0
+offset_bottom = 408.0
 theme_override_constants/separation = 18
 
 [node name="Level" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
@@ -231,6 +231,33 @@ vertical_alignment = 1
 [node name="New_Range" type="Label" parent="CanvasLayer/VBoxContainer/Range"]
 layout_mode = 2
 text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Speed" type="Label" parent="CanvasLayer/VBoxContainer/Speed"]
+layout_mode = 2
+text = "Speed : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Old_Speed" type="Label" parent="CanvasLayer/VBoxContainer/Speed"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrow3" type="Label" parent="CanvasLayer/VBoxContainer/Speed"]
+layout_mode = 2
+text = "->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="New_Speed" type="Label" parent="CanvasLayer/VBoxContainer/Speed"]
+layout_mode = 2
+text = "1.1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
