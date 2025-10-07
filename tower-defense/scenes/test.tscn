@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dk5qakt24es0e" path="res://Scrips/test.gd" id="1_j5jx5"]
 [ext_resource type="Texture2D" uid="uid://cg6mh8os3omuv" path="res://assets/sky/sky1.exr" id="2_at5dv"]
 [ext_resource type="PackedScene" uid="uid://bss0f6qvwlqht" path="res://scenes/camera.tscn" id="2_bl13t"]
-[ext_resource type="PackedScene" uid="uid://dkf87uvabisam" path="res://scenes/mouse_handler.tscn" id="2_lpvoh"]
+[ext_resource type="PackedScene" uid="uid://dvse34o2skbh4" path="res://scenes/mouse_handler.tscn" id="2_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://dpf6uq8ld2xww" path="res://Map/snown_map.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://dlnnp8xhhsnxm" path="res://scenes/ui.tscn" id="4_74lek"]
 [ext_resource type="PackedScene" uid="uid://ddmkfnmhl3283" path="res://scenes/ui_upgrade.tscn" id="6_lpvoh"]
