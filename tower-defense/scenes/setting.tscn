@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://kfwgww1iirw4"]
+[gd_scene load_steps=5 format=3 uid="uid://kfwgww1iirw4"]
 
 [ext_resource type="Texture2D" uid="uid://de810ucfvruj" path="res://assets/Images/Asset1.png" id="1_sjyvh"]
 [ext_resource type="Script" uid="uid://c5tls05ktlj72" path="res://Scrips/setting.gd" id="1_u58eq"]
-[ext_resource type="FontFile" uid="uid://bmwb85pxus4qf" path="res://assets/font/Ethnocentric Rg It.otf" id="3_7k1fe"]
+[ext_resource type="Texture2D" uid="uid://cltjc7lqxu5r3" path="res://assets/Images/Screenshot 2025-10-08 023739.png" id="2_scrng"]
+[ext_resource type="FontFile" path="res://assets/font/Ethnocentric Rg It.otf" id="3_7k1fe"]
 
 [node name="Setting" type="Node"]
 
@@ -10,25 +11,23 @@
 script = ExtResource("1_u58eq")
 Bus_name = "Music"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_right = 1.0113
-anchor_bottom = 1.00615
-offset_right = 20110.0
-offset_bottom = 10199.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.0547602, 0.0600855)
-texture = ExtResource("1_sjyvh")
-region_rect = Rect2(178.312, 161.026, 2523.25, 1593.95)
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_scrng")
+metadata/_edit_lock_ = true
 
-[node name="Setting" type="Label" parent="CanvasLayer"]
+[node name="Setting" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.393229
 anchor_top = 0.0200617
-anchor_right = 0.588542
+anchor_right = 0.595486
 anchor_bottom = 0.145062
+offset_right = 6.10352e-05
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7k1fe")
@@ -38,82 +37,99 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Music_label" type="Label" parent="CanvasLayer"]
+[node name="Music_label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.164931
-anchor_top = 0.290123
-anchor_right = 0.360243
-anchor_bottom = 0.415123
-offset_left = -29.0005
-offset_top = -1.99969
-offset_right = -29.0005
-offset_bottom = -1.99969
+anchor_left = 0.402778
+anchor_top = 0.263889
+anchor_right = 0.59809
+anchor_bottom = 0.38889
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7k1fe")
 theme_override_font_sizes/font_size = 40
-text = "Music :"
+text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Audio_music_control" type="HSlider" parent="CanvasLayer"]
+[node name="Audio_music_control" type="HSlider" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.335938
-anchor_top = 0.313272
-anchor_right = 0.881076
-anchor_bottom = 0.408951
+anchor_left = 0.0980908
+anchor_top = 0.365741
+anchor_right = 0.643229
+anchor_bottom = 0.461421
 offset_right = -314.0
-offset_bottom = -31.0
+offset_bottom = -31.0002
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.00446398
 scale = Vector2(2, 2)
 mouse_default_cursor_shape = 2
 min_value = -20.0
 max_value = 15.0
 step = 0.1
-metadata/_edit_use_anchors_ = true
 
-[node name="Sound_label" type="Label" parent="CanvasLayer"]
+[node name="Sound_label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.168403
-anchor_top = 0.396605
-anchor_right = 0.363715
-anchor_bottom = 0.521605
-offset_left = -49.0003
-offset_top = -6.10352e-05
-offset_right = -49.0003
-offset_bottom = -6.10352e-05
+anchor_left = 0.402778
+anchor_top = 0.473772
+anchor_right = 0.598091
+anchor_bottom = 0.598772
+offset_left = -1.52588e-05
+rotation = -0.00446398
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7k1fe")
 theme_override_font_sizes/font_size = 40
-text = "Sound :"
+text = "Sound"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="sound" type="HSlider" parent="CanvasLayer"]
+[node name="sound" type="HSlider" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.335069
-anchor_top = 0.421296
-anchor_right = 0.880208
-anchor_bottom = 0.516975
-offset_right = -314.0
+anchor_left = 0.0972222
+anchor_top = 0.546303
+anchor_right = 0.642359
+anchor_bottom = 0.641982
+offset_right = -313.999
 offset_bottom = -31.0
+rotation = -0.00446398
 scale = Vector2(2, 2)
 mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Back" type="Button" parent="CanvasLayer"]
+[node name="Back" type="Button" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.432292
-anchor_top = 0.589506
-anchor_right = 0.608507
-anchor_bottom = 0.714506
+anchor_left = 0.421875
+anchor_top = 0.720679
+anchor_right = 0.59809
+anchor_bottom = 0.845679
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_7k1fe")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="value_changed" from="CanvasLayer/Audio_music_control" to="CanvasLayer" method="_on_audio_music_control_value_changed"]
-[connection signal="pressed" from="CanvasLayer/Back" to="CanvasLayer" method="_on_back_pressed"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1334.0
+offset_top = 432.0
+offset_right = 11760.0
+offset_bottom = 4710.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0547602, 0.0600855)
+texture = ExtResource("1_sjyvh")
+region_rect = Rect2(178.312, 161.026, 2523.25, 1593.95)
+
+[connection signal="value_changed" from="CanvasLayer/TextureRect/Audio_music_control" to="CanvasLayer" method="_on_audio_music_control_value_changed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/Back" to="CanvasLayer" method="_on_back_pressed"]
