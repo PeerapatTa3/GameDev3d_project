@@ -20,10 +20,6 @@ config/icon="res://icon.svg"
 GameStatus="*res://Scrips/GameStats.gd"
 AudioManager="*res://scenes/audio/audio_manager.tscn"
 
-[display]
-
-window/size/mode=3
-
 [gui]
 
 theme/custom_font="uid://dx7jwif2b8lai"
